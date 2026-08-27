@@ -6,8 +6,8 @@
 
 ## Immediate Next Action
 
-1. **TASK-303**: Create database class (Priority: P0)
-   - Create the Room database instance and configuration.
+1. **TASK-304**: Create Hilt database module (Priority: P0)
+   - Setup Hilt provision for Room DAOs and DB.
 
 Plan status: **APPROVED**
 
