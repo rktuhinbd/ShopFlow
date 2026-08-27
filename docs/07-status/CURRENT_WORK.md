@@ -11,10 +11,10 @@
 - **Assignee**: Unassigned
 
 ## Context
-TASK-306 (Context-Aware Cache Schema) is complete. The v2 database schema has been verified with tests and migration data invariants. The project is unblocked for implementing the Paging3 `RemoteMediator`.
+TASK-400 (Create RemoteMediator) is complete. The RemoteMediator correctly handles Paging 3 events, offline-first synchronization, caching timeouts, and context isolation (`ALL` vs `CATEGORY`).
 
 ## Immediate Next Steps
-1. Create `ProductRemoteMediator`.
+1. Proceed with the next planned task (TASK-401 or TASK-402).
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -24,12 +24,13 @@ TASK-306 (Context-Aware Cache Schema) is complete. The v2 database schema has be
 - TASK-304: Create Hilt database module
 - TASK-305: Write DAO tests
 - TASK-306: Implement Context-Aware Cache Schema and Membership Queries
+- TASK-400: Create RemoteMediator
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-400**: Create RemoteMediator.
+Check NEXT_ACTIONS.md for the next task.
 
 ## Verification
-TASK-306 verified by `./gradlew connectedAndroidTest` (Passed database migration tests and DAO queries).
+TASK-400 verified by `./gradlew connectedAndroidTest` (Passed all RemoteMediator instrumentation tests).

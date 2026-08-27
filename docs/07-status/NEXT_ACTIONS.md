@@ -6,19 +6,14 @@
 
 ## Immediate Next Action
 
-1. **TASK-400**: Create RemoteMediator (Priority: P0)
-   - Implement RemoteMediator for paging data.
+1. **TASK-401/402**: Configure Pager and Remote Key logic (Priority: P0)
+   - Setup the Paging config and pager instance, combining it with the mediator.
 
-Plan status: **PLANNED**
+Plan status: **DRAFT**
 
 ## Next 3 Actions
 
-1. **TASK-400**: Create RemoteMediator (Priority: P0)
-   - Implement RemoteMediator for paging data.
-2. **TASK-401**: Implement remote key management (Priority: P0)
-   - Setup remote key generation and storage logic.
-3. **TASK-402**: Configure Pager (Priority: P0)
-   - Setup the Paging config and pager instance.
+1. **TASK-401/402**: Configure Pager and repositories (Priority: P0)
 
 ## Future Actions
 

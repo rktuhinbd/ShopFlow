@@ -55,3 +55,9 @@
 | TASK-304 | Create Hilt database module | 2026-08-27 | DatabaseModule created and verified by build. |
 | TASK-305 | Write DAO tests | 2026-08-27 | 20/20 tests passed on connected device (Pixel_10_Pro). |
 | TASK-306 | Implement Context-Aware Cache Schema | 2026-08-27 | Unit tests passed. |
+
+## M4 — Paging & RemoteMediator
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-400 | Create RemoteMediator | 2026-08-27 | connectedAndroidTest passed |
