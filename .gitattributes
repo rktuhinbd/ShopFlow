@@ -1,0 +1,31 @@
+# Repository-wide line-ending policy
+* text=auto eol=lf
+
+# Explicitly keep common text/code/config files as LF
+*.kt       text eol=lf
+*.kts      text eol=lf
+*.java     text eol=lf
+*.xml      text eol=lf
+*.gradle   text eol=lf
+*.properties text eol=lf
+*.toml     text eol=lf
+*.md       text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+*.json     text eol=lf
+*.mmd      text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+*.sh       text eol=lf
+
+# Binary files
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.webp     binary
+*.gif      binary
+*.ico      binary
+*.keystore binary
+*.jks      binary
+*.apk      binary
+*.aab      binary

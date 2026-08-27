@@ -49,9 +49,9 @@
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-100 | Add all dependencies to Version Catalog | P0 | M0 approved | Medium | PLANNED |
-| TASK-101 | Configure Hilt and KSP | P0 | TASK-100 | Medium | PLANNED |
-| TASK-102 | Create package structure | P0 | TASK-101 | Low | PLANNED |
+| TASK-100 | Add all dependencies to Version Catalog | P0 | M0 approved | Medium | DONE |
+| TASK-101 | Architecture / Package Foundation | P0 | TASK-100 | Low | DONE |
+| TASK-102 | Hilt / Application DI Setup | P0 | TASK-101 | Medium | PLANNED |
 | TASK-103 | Create base Application class with Hilt | P0 | TASK-101 | Low | PLANNED |
 | TASK-104 | Verify build succeeds | P0 | TASK-103 | Low | PLANNED |
 

@@ -50,11 +50,10 @@ gantt
 
 ### M1 — Project Foundation
 - Add all dependencies to Version Catalog
-- Configure Hilt
-- Configure KSP
 - Set up package structure
-- Verify build succeeds
+- Configure Hilt and KSP
 - Create base Application class
+- Verify build succeeds
 
 **Dependencies**: M0 approved  
 **Exit Criteria**: Project builds with all dependencies; Hilt compiles.

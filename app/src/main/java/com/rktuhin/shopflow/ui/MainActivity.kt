@@ -1,4 +1,4 @@
-package com.rktuhin.shopflow
+package com.rktuhin.shopflow.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
