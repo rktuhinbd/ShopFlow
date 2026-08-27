@@ -39,3 +39,4 @@
 | Task | Title | Completed | Verification |
 |------|-------|-----------|-------------|
 | TASK-200 | Create API response DTOs | 2026-08-27 | Serialization tests passed, build successful |
+| TASK-201 | Create Retrofit API service interface | 2026-08-27 | Build passed |

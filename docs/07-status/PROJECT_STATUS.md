@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M2 — Network Layer) |
 | **Overall Progress** | M1 completed; M2 started |
 | **Current Milestone** | M2 — Network Layer |
-| **Current Task** | None (Ready for TASK-201) |
+| **Current Task** | None (Ready for TASK-202) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-200 — Create API response DTOs |
+| **Last Completed** | TASK-201 - Create Retrofit API Service Interface |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-201 — Create Retrofit API Service Interface |
+| **Next Task** | TASK-202 - Create OkHttp client configuration |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-101 build verified (2026-08-27) |
+| **Latest Verification** | TASK-201 build verified (2026-08-27) |
 
 ## Plan State
 

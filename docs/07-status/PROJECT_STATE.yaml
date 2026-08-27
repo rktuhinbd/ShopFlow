@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-201
-  title: Create Retrofit API Service Interface
+  id: TASK-202
+  title: Create OkHttp client configuration
   status: READY
 last_completed:
-  id: TASK-200
-  title: Create API response DTOs
+  id: TASK-201
+  title: Create Retrofit API Service Interface
   status: DONE
 blocked: false
 implementation_allowed: true

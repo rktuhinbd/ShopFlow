@@ -14,17 +14,17 @@
 Milestone 1 (Project Foundation) is fully complete. Hilt Application setup is verified. The next step is starting Milestone 2 (Network Layer) by creating the API response DTOs according to the verified schema in `API_SPECIFICATION.md`.
 
 ## Immediate Next Steps
-1. Create data transfer objects (DTOs) for the DummyJSON API responses.
-2. Annotate DTOs with `@Serializable` for `kotlinx.serialization`.
+1. Create OkHttp client configuration.
 
 ## Completed Substeps
 - TASK-200: Create API response DTOs
+- TASK-201: Create Retrofit API Service Interface
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-201**: Create Retrofit API Service Interface.
+**TASK-202**: Create OkHttp client configuration.
 
 ## Verification
-M1 verified by `./gradlew assembleDebug` on 2026-08-27.
+TASK-201 verified by `./gradlew assembleDebug` on 2026-08-27.
