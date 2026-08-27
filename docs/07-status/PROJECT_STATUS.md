@@ -10,11 +10,11 @@
 | **Current Phase** | IMPLEMENTATION (M2 — Network Layer) |
 | **Overall Progress** | M1 completed; M2 started |
 | **Current Milestone** | M2 — Network Layer |
-| **Current Task** | None (Ready for TASK-200) |
+| **Current Task** | None (Ready for TASK-201) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-104 — Verify build succeeds |
+| **Last Completed** | TASK-200 — Create API response DTOs |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-200 — Create API response DTOs |
+| **Next Task** | TASK-201 — Create Retrofit API Service Interface |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
 | **Latest Verification** | TASK-101 build verified (2026-08-27) |

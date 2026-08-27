@@ -33,3 +33,9 @@
 | TASK-102 | Hilt Application Setup | 2026-08-27 | `./gradlew assembleDebug` passed successfully |
 | TASK-103 | Create base Application class with Hilt | 2026-08-27 | Completed within TASK-102 |
 | TASK-104 | Verify build succeeds | 2026-08-27 | Verified during TASK-102 |
+
+## M2 — Network Layer
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-200 | Create API response DTOs | 2026-08-27 | Serialization tests passed, build successful |

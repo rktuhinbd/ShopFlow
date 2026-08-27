@@ -1,6 +1,6 @@
 project: ShopFlow
 phase: implementation
-overall_progress: 1
+overall_progress: 2
 plan:
   version: "1.0"
   status: APPROVED
@@ -10,11 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-200
-  title: Create API response DTOs
+  id: TASK-201
+  title: Create Retrofit API Service Interface
   status: READY
 last_completed:
-  id: TASK-104
+  id: TASK-200
+  title: Create API response DTOs
   status: DONE
 blocked: false
 implementation_allowed: true

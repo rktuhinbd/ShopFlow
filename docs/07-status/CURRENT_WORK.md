@@ -18,13 +18,13 @@ Milestone 1 (Project Foundation) is fully complete. Hilt Application setup is ve
 2. Annotate DTOs with `@Serializable` for `kotlinx.serialization`.
 
 ## Completed Substeps
-- None yet.
+- TASK-200: Create API response DTOs
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-200**: Implement API response DTOs.
+**TASK-201**: Create Retrofit API Service Interface.
 
 ## Verification
 M1 verified by `./gradlew assembleDebug` on 2026-08-27.

@@ -118,6 +118,10 @@ Include in handoff: what changed, what is verified, what failed, next step, veri
 - Never convert uncertainty into confident assertion
 - Never override repository state with assumptions
 
+## Automation Rules
+
+- Agents must not schedule reminders, automations, recurring jobs, or background tasks unless explicitly required by the current task.
+
 ## Agent-Specific Instructions
 
 | Agent | Instruction File |
