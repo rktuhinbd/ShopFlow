@@ -1,15 +1,125 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# ============================================================
+# ShopFlow Android - Git Ignore
+# ============================================================
+
+# -------------------------
+# Gradle
+# -------------------------
+.gradle/
+**/build/
+
+# Gradle generated Kotlin data
+.kotlin/
+
+# -------------------------
+# Local machine / Android SDK
+# -------------------------
 local.properties
+
+# -------------------------
+# Android Studio / IntelliJ
+# -------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# User-specific IDE state
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries/
+.idea/**/shelf/
+.idea/**/httpRequests/
+
+# Generated IDE metadata
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/gradle.xml
+.idea/**/libraries/
+
+# -------------------------
+# Android generated files
+# -------------------------
+captures/
+.externalNativeBuild/
+.cxx/
+
+# -------------------------
+# Build artifacts
+# -------------------------
+*.apk
+*.aab
+*.ap_
+output-metadata.json
+
+# -------------------------
+# Native / CMake
+# -------------------------
+.cmake/
+
+# -------------------------
+# Signing / secrets
+# -------------------------
+*.jks
+*.keystore
+
+# Local environment / secret files
+.env
+.env.*
+!.env.example
+
+# Google/Firebase sensitive configuration
+google-services.json
+firebase-debug.log
+crashlytics.properties
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Profiling / crash dumps
+# -------------------------
+*.hprof
+*.prof
+*.trace
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# -------------------------
+# Temporary files
+# -------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# -------------------------
+# AI / local agent state
+# -------------------------
+
+# Local Claude preferences / personal project instructions
+CLAUDE.local.md
+
+# Agent temporary scratch space
+.agent-tmp/
+.ai-tmp/
+
+# Local generated reports
+reports/local/
+
+# -------------------------
+# Test / coverage output
+# -------------------------
+coverage/
+jacoco/
