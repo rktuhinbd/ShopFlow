@@ -1,0 +1,52 @@
+erDiagram
+    ProductEntity {
+        Int id PK "API product ID"
+        String title "NOT NULL"
+        String description "NOT NULL"
+        String category "NOT NULL indexed"
+        Double price "NOT NULL"
+        Double discountPercentage "NOT NULL"
+        Double rating "NOT NULL"
+        Int stock "NOT NULL"
+        String tags "NOT NULL JSON"
+        String brand "NULLABLE"
+        String sku "NOT NULL"
+        Int weight "NOT NULL"
+        Double dimensionWidth "NOT NULL"
+        Double dimensionHeight "NOT NULL"
+        Double dimensionDepth "NOT NULL"
+        String warrantyInformation "NOT NULL"
+        String shippingInformation "NOT NULL"
+        String availabilityStatus "NOT NULL"
+        String reviews "NOT NULL JSON"
+        String returnPolicy "NOT NULL"
+        Int minimumOrderQuantity "NOT NULL"
+        String barcode "NOT NULL"
+        String images "NOT NULL JSON"
+        String thumbnail "NOT NULL URL"
+        Long cachedAt "NOT NULL epoch"
+    }
+
+    FavoriteEntity {
+        Int productId PK "Refs ProductEntity"
+        Long favoritedAt "NOT NULL epoch"
+    }
+
+    RemoteKeyEntity {
+        Int productId PK "Refs ProductEntity"
+        String query "NOT NULL cache identity"
+        Int prevKey "NULLABLE"
+        Int currentPage "NOT NULL"
+        Int nextKey "NULLABLE"
+        Long createdAt "NOT NULL epoch"
+    }
+
+    CategoryEntity {
+        String slug PK "Category slug"
+        String name "NOT NULL"
+        String url "NOT NULL"
+        Long cachedAt "NOT NULL epoch"
+    }
+
+    ProductEntity ||--o| FavoriteEntity : "favorited by"
+    ProductEntity ||--|| RemoteKeyEntity : "pagination key"

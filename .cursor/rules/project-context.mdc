@@ -1,0 +1,24 @@
+---
+description: ShopFlow project context and navigation
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# ShopFlow Project Context
+
+ShopFlow is an offline-first Android product catalog app.
+
+**Always read `AGENTS.md` first** for the mandatory startup sequence.
+
+## Key Docs
+- Requirements: `docs/00-project/MASTER_SRS.md`
+- Architecture: `docs/02-architecture/SYSTEM_ARCHITECTURE.md`
+- API: `docs/03-data/API_SPECIFICATION.md`
+- Status: `docs/07-status/PROJECT_STATUS.md`
+- Current work: `docs/07-status/CURRENT_WORK.md`
+- ADRs: `docs/08-decisions/ADR-INDEX.md`
+
+## Non-Hallucination
+- Never claim build/test passed without running it
+- Use `UNKNOWN — NEEDS VERIFICATION` when unsure
+- Always inspect repository state before modifying

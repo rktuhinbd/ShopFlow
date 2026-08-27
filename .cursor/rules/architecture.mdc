@@ -1,0 +1,16 @@
+---
+description: ShopFlow architecture constraints
+globs: ["app/src/**/*.kt"]
+alwaysApply: false
+---
+
+# Architecture Rules
+
+- **MVVM + Clean Architecture**: UI → ViewModel → Repository → DataSource
+- **Room is the single source of truth** for catalog data (ADR-001)
+- **RemoteMediator** for network-backed paging (ADR-002)
+- **Hilt** for dependency injection
+- **Type-safe Navigation Compose** (ADR-004)
+- **No silent architecture changes** — create an ADR first
+
+See `docs/02-architecture/SYSTEM_ARCHITECTURE.md` for full details.

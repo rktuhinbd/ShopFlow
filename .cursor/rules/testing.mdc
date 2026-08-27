@@ -1,0 +1,18 @@
+---
+description: Testing standards for ShopFlow
+globs: ["app/src/test/**/*.kt", "app/src/androidTest/**/*.kt"]
+alwaysApply: false
+---
+
+# Testing Standards
+
+- Behavioral testing preferred over structural testing
+- Fakes preferred over mocks where appropriate
+- Unit tests: `app/src/test/`
+- Instrumented tests: `app/src/androidTest/`
+- Test Room with in-memory database
+- Test ViewModels with TestDispatcher
+- Test Compose UI with ComposeTestRule
+- Never claim tests pass without running them
+
+See `docs/05-engineering/TEST_STRATEGY.md`.

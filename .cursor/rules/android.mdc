@@ -1,0 +1,16 @@
+---
+description: Android engineering standards for ShopFlow
+globs: ["app/**/*.kt", "app/**/*.xml", "*.gradle.kts", "gradle/**"]
+alwaysApply: false
+---
+
+# Android Engineering Standards
+
+- Kotlin, Jetpack Compose, Material 3
+- Package: `com.rktuhin.shopflow`
+- minSdk 24, targetSdk/compileSdk per `app/build.gradle.kts`
+- Version Catalog: `gradle/libs.versions.toml`
+- Verify dependency versions against official docs before adding
+- 16 KB page-size compatibility required
+
+See `docs/05-engineering/TECH_STACK.md` and `docs/05-engineering/BUILD_AND_RELEASE.md`.

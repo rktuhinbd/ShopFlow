@@ -1,0 +1,15 @@
+---
+description: Documentation and Git workflow for ShopFlow
+globs: ["docs/**/*.md", "tasks/**/*.md", "*.md"]
+alwaysApply: false
+---
+
+# Documentation & Git
+
+- All project knowledge lives in `docs/`
+- Task files live in `tasks/{planned,in-progress,done,blocked}/`
+- Update status docs after every work session
+- Commit messages: `type(scope): description`
+- Types: feat, fix, docs, refactor, test, chore
+- Branch from master for features
+- Never force-push to master
