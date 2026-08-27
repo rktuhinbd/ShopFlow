@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-304
-  title: Create Hilt database module
+  id: TASK-305
+  title: Write DAO tests
   status: READY
 last_completed:
-  id: TASK-303
-  title: Create database class
+  id: TASK-304
+  title: Create Hilt database module
   status: DONE
 blocked: false
 implementation_allowed: true

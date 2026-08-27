@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M3 — Room / Local Data) |
 | **Overall Progress** | M2 completed; M3 starting |
 | **Current Milestone** | M3 — Room / Local Data |
-| **Current Task** | None (Ready for TASK-304) |
+| **Current Task** | None (Ready for TASK-305) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-303 - Create database class |
+| **Last Completed** | TASK-304 - Create Hilt database module |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-304 - Create Hilt database module |
+| **Next Task** | TASK-305 - Write DAO tests |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-303 assembleDebug and testDebugUnitTest passes (2026-08-27) |
+| **Latest Verification** | TASK-304 assembleDebug and testDebugUnitTest passes (2026-08-27) |
 
 ## Plan State
 

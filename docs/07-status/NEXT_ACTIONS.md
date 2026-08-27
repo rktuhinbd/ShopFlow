@@ -6,19 +6,19 @@
 
 ## Immediate Next Action
 
-1. **TASK-304**: Create Hilt database module (Priority: P0)
-   - Setup Hilt provision for Room DAOs and DB.
+1. **TASK-305**: Write DAO tests (Priority: P1)
+   - Write tests for Room DAOs.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-304**: Create Hilt database module (Priority: P0)
-   - Setup Hilt provision for Room DAOs and DB.
-2. **TASK-305**: Write DAO tests (Priority: P1)
+1. **TASK-305**: Write DAO tests (Priority: P1)
    - Write tests for Room DAOs.
-3. **TASK-400**: Create RemoteMediator (Priority: P0)
+2. **TASK-400**: Create RemoteMediator (Priority: P0)
    - Implement RemoteMediator for paging data.
+3. **TASK-401**: Create RemoteDataSource (Priority: P0)
+   - Implement data sources for the API.
 
 ## Future Actions
 

@@ -26,12 +26,13 @@ Milestone 2 (Network Layer) is fully complete. The next step is starting Milesto
 - TASK-301: Create TypeConverters
 - TASK-302: Create DAOs
 - TASK-303: Create database class
+- TASK-304: Create Hilt database module
 
 ## Known Issues
 - No connected emulator for instrumented tests.
 
 ## Next Action
-**TASK-304**: Create Hilt database module.
+**TASK-305**: Write DAO tests.
 
 ## Verification
-TASK-303 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.
+TASK-304 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.
