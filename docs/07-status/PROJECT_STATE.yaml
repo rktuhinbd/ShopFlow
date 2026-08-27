@@ -4,18 +4,18 @@ overall_progress: 2
 plan:
   version: "1.0"
   status: APPROVED
-current_milestone: M2
+current_milestone: M3
 current_task:
   id: null
   title: null
   status: READY
 next_task:
-  id: TASK-204
-  title: Write API service tests
+  id: TASK-300
+  title: Create Room entities
   status: READY
 last_completed:
-  id: TASK-203
-  title: Provide Retrofit and ProductApi through Hilt
+  id: TASK-204
+  title: Write API service tests
   status: DONE
 blocked: false
 implementation_allowed: true

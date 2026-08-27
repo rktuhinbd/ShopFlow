@@ -1,24 +1,24 @@
 # ShopFlow — Next Actions
 
-**Last Updated**: 2026-08-27T17:35:00+06:00
+**Last Updated**: 2026-08-27T18:40:00+06:00
 
 ---
 
 ## Immediate Next Action
 
-1. **TASK-204**: Write API service tests (Priority: P1)
-   - Add tests for Retrofit API interface.
+1. **TASK-300**: Create Room entities (Priority: P0)
+   - Add local DB entities for Products, etc.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-300**: Create Room entities (Priority: P0)
-   - Add local DB entities for Products, etc.
-2. **TASK-301**: Create TypeConverters (Priority: P0)
+1. **TASK-301**: Create TypeConverters (Priority: P0)
    - Add TypeConverters for lists and complex types.
-3. **TASK-302**: Create DAOs (Priority: P0)
+2. **TASK-302**: Create DAOs (Priority: P0)
    - Add DAO interfaces for database operations.
+3. **TASK-303**: Create database class (Priority: P0)
+   - Create the Room database instance and configuration.
 
 ## Future Actions
 

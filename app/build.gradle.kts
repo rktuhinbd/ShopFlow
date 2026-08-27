@@ -80,7 +80,12 @@ dependencies {
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)
+    
+    // Testing
     testImplementation(libs.junit)
+    testImplementation(libs.okhttp.mockwebserver)
+    testImplementation(libs.coroutines.test)
+
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,6 +1,6 @@
 # ShopFlow — Current Work
 
-**Last Updated**: 2026-08-27T17:35:00+06:00
+**Last Updated**: 2026-08-27T18:40:00+06:00
 
 ---
 
@@ -11,22 +11,23 @@
 - **Assignee**: Unassigned
 
 ## Context
-Milestone 1 (Project Foundation) is fully complete. Hilt Application setup is verified. The next step is starting Milestone 2 (Network Layer) by creating the API response DTOs according to the verified schema in `API_SPECIFICATION.md`.
+Milestone 2 (Network Layer) is fully complete. The next step is starting Milestone 3 (Room / Local Data) by creating Room entities.
 
 ## Immediate Next Steps
-1. Write API service tests.
+1. Create Room entities for Product, Category, etc.
 
 ## Completed Substeps
 - TASK-200: Create API response DTOs
 - TASK-201: Create Retrofit API Service Interface
 - TASK-202: Create OkHttp client configuration
 - TASK-203: Provide Retrofit and ProductApi through Hilt
+- TASK-204: Write API service tests
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-204**: Write API service tests.
+**TASK-300**: Create Room entities.
 
 ## Verification
-TASK-203 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.
+TASK-204 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.

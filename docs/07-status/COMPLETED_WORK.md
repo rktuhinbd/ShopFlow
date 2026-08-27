@@ -40,3 +40,6 @@
 |------|-------|-----------|-------------|
 | TASK-200 | Create API response DTOs | 2026-08-27 | Serialization tests passed, build successful |
 | TASK-201 | Create Retrofit API service interface | 2026-08-27 | Build passed |
+| TASK-202 | Create OkHttp client configuration | 2026-08-27 | Build passed |
+| TASK-203 | Provide Retrofit and ProductApi through Hilt | 2026-08-27 | Build passed |
+| TASK-204 | Write API service tests | 2026-08-27 | API unit tests passed |
