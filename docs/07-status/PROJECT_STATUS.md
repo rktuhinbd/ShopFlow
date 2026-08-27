@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M2 — Network Layer) |
 | **Overall Progress** | M1 completed; M2 started |
 | **Current Milestone** | M2 — Network Layer |
-| **Current Task** | None (Ready for TASK-203) |
+| **Current Task** | None (Ready for TASK-204) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-202 - Create OkHttp client configuration |
+| **Last Completed** | TASK-203 - Provide Retrofit and ProductApi through Hilt |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-203 - Provide Retrofit and ProductApi through Hilt |
+| **Next Task** | TASK-204 - Write API service tests |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-202 build verified (2026-08-27) |
+| **Latest Verification** | TASK-203 build verified (2026-08-27) |
 
 ## Plan State
 

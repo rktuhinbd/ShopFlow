@@ -14,18 +14,19 @@
 Milestone 1 (Project Foundation) is fully complete. Hilt Application setup is verified. The next step is starting Milestone 2 (Network Layer) by creating the API response DTOs according to the verified schema in `API_SPECIFICATION.md`.
 
 ## Immediate Next Steps
-1. Provide Retrofit and ProductApi through Hilt.
+1. Write API service tests.
 
 ## Completed Substeps
 - TASK-200: Create API response DTOs
 - TASK-201: Create Retrofit API Service Interface
 - TASK-202: Create OkHttp client configuration
+- TASK-203: Provide Retrofit and ProductApi through Hilt
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-203**: Provide Retrofit and ProductApi through Hilt.
+**TASK-204**: Write API service tests.
 
 ## Verification
-TASK-202 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.
+TASK-203 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.

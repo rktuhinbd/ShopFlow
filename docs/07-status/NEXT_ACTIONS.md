@@ -6,17 +6,19 @@
 
 ## Immediate Next Action
 
-1. **TASK-203**: Provide Retrofit and ProductApi through Hilt (Priority: P0)
-   - Provide Retrofit instance and ProductApi service via Hilt.
+1. **TASK-204**: Write API service tests (Priority: P1)
+   - Add tests for Retrofit API interface.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-204**: Write API service tests (Priority: P1)
-   - Add tests for Retrofit API interface.
-2. **TASK-300**: Create Room entities (Priority: P0)
+1. **TASK-300**: Create Room entities (Priority: P0)
    - Add local DB entities for Products, etc.
+2. **TASK-301**: Create TypeConverters (Priority: P0)
+   - Add TypeConverters for lists and complex types.
+3. **TASK-302**: Create DAOs (Priority: P0)
+   - Add DAO interfaces for database operations.
 
 ## Future Actions
 
