@@ -1,32 +1,30 @@
 # ShopFlow — Current Work
 
-**Last Updated**: 2026-08-27T17:00:00+06:00
+**Last Updated**: 2026-08-27T17:35:00+06:00
 
 ---
 
 ## Current Task
-- **ID**: TASK-102
-- **Title**: Hilt Application Setup
-- **Status**: PLANNED
-- **Assignee**: AI Agent
+- **ID**: None
+- **Title**: None
+- **Status**: READY
+- **Assignee**: Unassigned
 
 ## Context
-Implementation of the ShopFlow app is progressing. The foundational clean architecture package structure (TASK-101) has been created. The next step is to configure the application class with Hilt for Dependency Injection setup.
+Milestone 1 (Project Foundation) is fully complete. Hilt Application setup is verified. The next step is starting Milestone 2 (Network Layer) by creating the API response DTOs according to the verified schema in `API_SPECIFICATION.md`.
 
 ## Immediate Next Steps
-1. Create the custom `Application` class annotated with `@HiltAndroidApp`.
-2. Update `AndroidManifest.xml` to use the custom application class.
+1. Create data transfer objects (DTOs) for the DummyJSON API responses.
+2. Annotate DTOs with `@Serializable` for `kotlinx.serialization`.
 
 ## Completed Substeps
-- [x] Create `com.rktuhin.shopflow` sub-packages (`ui`, `data`, `domain`, `di`)
-- [x] Move `MainActivity.kt` to `com.rktuhin.shopflow.ui`
-- [x] Verify package structure builds successfully
+- None yet.
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-102**: Implement Hilt Application Setup.
+**TASK-200**: Implement API response DTOs.
 
 ## Verification
-Package structure verified by `./gradlew assembleDebug` on 2026-08-27.
+M1 verified by `./gradlew assembleDebug` on 2026-08-27.

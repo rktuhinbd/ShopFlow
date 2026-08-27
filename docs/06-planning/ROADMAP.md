@@ -14,7 +14,7 @@ gantt
     dateFormat  YYYY-MM-DD
     section Foundation
     M0 Agentic Foundation     :done, m0, 2026-08-27, 1d
-    M1 Project Foundation     :m1, after m0, 2d
+    M1 Project Foundation     :done, m1, after m0, 2d
     section Data Layer
     M2 Network Layer          :m2, after m1, 2d
     M3 Room / Local Data      :m3, after m2, 2d
@@ -48,7 +48,7 @@ gantt
 
 **Exit Criteria**: All planning documents created and reviewed.
 
-### M1 — Project Foundation
+### M1 — Project Foundation ✅ (Completed)
 - Add all dependencies to Version Catalog
 - Set up package structure
 - Configure Hilt and KSP

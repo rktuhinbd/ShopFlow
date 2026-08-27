@@ -7,14 +7,14 @@
 | Field | Value |
 |-------|-------|
 | **Project** | ShopFlow |
-| **Current Phase** | IMPLEMENTATION (M1 — Project Foundation) |
-| **Overall Progress** | M1 started; TASK-101 completed |
-| **Current Milestone** | M1 — Project Foundation |
-| **Current Task** | TASK-102 — Hilt Application Setup |
+| **Current Phase** | IMPLEMENTATION (M2 — Network Layer) |
+| **Overall Progress** | M1 completed; M2 started |
+| **Current Milestone** | M2 — Network Layer |
+| **Current Task** | None (Ready for TASK-200) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-101 — Create Package Structure |
-| **Currently Under Development** | Hilt Setup |
-| **Next Task** | TASK-103 — Define Theme & Colors |
+| **Last Completed** | TASK-104 — Verify build succeeds |
+| **Currently Under Development** | None |
+| **Next Task** | TASK-200 — Create API response DTOs |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
 | **Latest Verification** | TASK-101 build verified (2026-08-27) |

@@ -51,9 +51,9 @@
 |----|-------|----------|-------------|-----------|--------|
 | TASK-100 | Add all dependencies to Version Catalog | P0 | M0 approved | Medium | DONE |
 | TASK-101 | Architecture / Package Foundation | P0 | TASK-100 | Low | DONE |
-| TASK-102 | Hilt / Application DI Setup | P0 | TASK-101 | Medium | PLANNED |
-| TASK-103 | Create base Application class with Hilt | P0 | TASK-101 | Low | PLANNED |
-| TASK-104 | Verify build succeeds | P0 | TASK-103 | Low | PLANNED |
+| TASK-102 | Hilt / Application DI Setup | P0 | TASK-101 | Medium | DONE |
+| TASK-103 | Create base Application class with Hilt | P0 | TASK-101 | Low | DONE |
+| TASK-104 | Verify build succeeds | P0 | TASK-103 | Low | DONE |
 
 ## M2 — Network Layer
 
