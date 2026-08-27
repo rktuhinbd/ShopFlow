@@ -31,7 +31,6 @@ erDiagram
         String reviews "NOT NULL, JSON array"
         String returnPolicy "NOT NULL"
         Int minimumOrderQuantity "NOT NULL"
-        String barcode "NOT NULL"
         String images "NOT NULL, JSON array"
         String thumbnail "NOT NULL, URL"
         Long cachedAt "NOT NULL, epoch ms"
@@ -44,7 +43,7 @@ erDiagram
 
     RemoteKeyEntity {
         Int productId PK "References ProductEntity.id"
-        String query "NOT NULL, Cache identity"
+        String query PK "Cache identity"
         Int prevKey "NULLABLE"
         Int currentPage "NOT NULL"
         Int nextKey "NULLABLE"
@@ -73,9 +72,8 @@ erDiagram
 | Table | Index | Columns | Purpose |
 |-------|-------|---------|---------|
 | products | `index_products_category` | `category` | Category filter queries |
-| products | `index_products_title` | `title` | Search optimization |
 | favorites | (PK) | `productId` | Favorite lookup |
-| remote_keys | (PK) | `productId` | Pagination key lookup |
+| remote_keys | (PK) | `productId, query` | Pagination key lookup |
 
 ---
 

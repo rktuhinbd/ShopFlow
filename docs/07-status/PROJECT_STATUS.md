@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M3 — Room / Local Data) |
 | **Overall Progress** | M2 completed; M3 starting |
 | **Current Milestone** | M3 — Room / Local Data |
-| **Current Task** | None (Ready for TASK-300) |
+| **Current Task** | None (Ready for TASK-301) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-204 - Write API service tests |
+| **Last Completed** | TASK-300 - Create Room entities |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-300 - Create Room entities |
+| **Next Task** | TASK-301 - Create TypeConverters |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-204 tests pass (2026-08-27) |
+| **Latest Verification** | TASK-300 assembleDebug passes (2026-08-27) |
 
 ## Plan State
 

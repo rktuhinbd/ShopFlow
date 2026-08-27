@@ -43,3 +43,9 @@
 | TASK-202 | Create OkHttp client configuration | 2026-08-27 | Build passed |
 | TASK-203 | Provide Retrofit and ProductApi through Hilt | 2026-08-27 | Build passed |
 | TASK-204 | Write API service tests | 2026-08-27 | API unit tests passed |
+
+## M3 — Room / Local Data
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-300 | Create Room entities | 2026-08-27 | Build and schema validation passed |

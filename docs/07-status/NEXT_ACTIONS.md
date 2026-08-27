@@ -6,19 +6,19 @@
 
 ## Immediate Next Action
 
-1. **TASK-300**: Create Room entities (Priority: P0)
-   - Add local DB entities for Products, etc.
+1. **TASK-301**: Create TypeConverters (Priority: P0)
+   - Add TypeConverters for lists and complex types.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-301**: Create TypeConverters (Priority: P0)
-   - Add TypeConverters for lists and complex types.
-2. **TASK-302**: Create DAOs (Priority: P0)
+1. **TASK-302**: Create DAOs (Priority: P0)
    - Add DAO interfaces for database operations.
-3. **TASK-303**: Create database class (Priority: P0)
+2. **TASK-303**: Create database class (Priority: P0)
    - Create the Room database instance and configuration.
+3. **TASK-304**: Create Hilt database module (Priority: P0)
+   - Setup Hilt provision for Room DAOs and DB.
 
 ## Future Actions
 

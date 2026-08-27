@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-300
-  title: Create Room entities
+  id: TASK-301
+  title: Create TypeConverters
   status: READY
 last_completed:
-  id: TASK-204
-  title: Write API service tests
+  id: TASK-300
+  title: Create Room entities
   status: DONE
 blocked: false
 implementation_allowed: true

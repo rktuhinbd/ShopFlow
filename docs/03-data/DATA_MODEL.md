@@ -39,14 +39,12 @@ The primary entity representing a cached product from the DummyJSON API.
 | `reviews` | String | NOT NULL | JSON array → TypeConverter |
 | `returnPolicy` | String | NOT NULL | API `returnPolicy` |
 | `minimumOrderQuantity` | Int | NOT NULL | API `minimumOrderQuantity` |
-| `barcode` | String | NOT NULL | API `meta.barcode` |
 | `images` | String | NOT NULL | JSON array → TypeConverter |
 | `thumbnail` | String | NOT NULL | API `thumbnail` |
 | `cachedAt` | Long | NOT NULL | System.currentTimeMillis() |
 
 **Indexes**:
 - `index_products_category` on `category` — for category filtering queries
-- `index_products_title` on `title` — for search optimization
 
 ### 2.2 FavoriteEntity
 
@@ -64,7 +62,7 @@ Tracks pagination state for RemoteMediator. Maps each product to its pagination 
 | Column | Type | Constraints | Source |
 |--------|------|-------------|--------|
 | `productId` | Int | PRIMARY KEY | References ProductEntity.id |
-| `query` | String | NOT NULL | Cache identity (e.g. "", "cat_smartphones") |
+| `query` | String | PRIMARY KEY | Cache identity (e.g. "", "cat_smartphones") |
 | `prevKey` | Int? | NULLABLE | Previous page number (null for first page) |
 | `currentPage` | Int | NOT NULL | Current page number |
 | `nextKey` | Int? | NULLABLE | Next page number (null for last page) |
