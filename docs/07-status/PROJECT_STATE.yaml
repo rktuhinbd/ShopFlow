@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
+  id: TASK-400
+  title: Create RemoteMediator
+  status: PLANNED
+last_completed:
   id: TASK-305
   title: Write DAO tests
-  status: READY
-last_completed:
-  id: TASK-304
-  title: Create Hilt database module
   status: DONE
 blocked: false
 implementation_allowed: true

@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M3 — Room / Local Data) |
 | **Overall Progress** | M2 completed; M3 starting |
 | **Current Milestone** | M3 — Room / Local Data |
-| **Current Task** | None (Ready for TASK-305) |
+| **Current Task** | None (Ready for TASK-400) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-304 - Create Hilt database module |
+| **Last Completed** | TASK-305 - Write DAO tests |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-305 - Write DAO tests |
+| **Next Task** | TASK-400 - Create RemoteMediator |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-304 assembleDebug and testDebugUnitTest passes (2026-08-27) |
+| **Latest Verification** | TASK-305 connectedAndroidTest passes (2026-08-27) |
 
 ## Plan State
 

@@ -6,19 +6,19 @@
 
 ## Immediate Next Action
 
-1. **TASK-305**: Write DAO tests (Priority: P1)
-   - Write tests for Room DAOs.
+1. **TASK-400**: Create RemoteMediator (Priority: P0)
+   - Implement RemoteMediator for paging data.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-305**: Write DAO tests (Priority: P1)
-   - Write tests for Room DAOs.
-2. **TASK-400**: Create RemoteMediator (Priority: P0)
+1. **TASK-400**: Create RemoteMediator (Priority: P0)
    - Implement RemoteMediator for paging data.
-3. **TASK-401**: Create RemoteDataSource (Priority: P0)
-   - Implement data sources for the API.
+2. **TASK-401**: Implement remote key management (Priority: P0)
+   - Setup remote key generation and storage logic.
+3. **TASK-402**: Configure Pager (Priority: P0)
+   - Setup the Paging config and pager instance.
 
 ## Future Actions
 

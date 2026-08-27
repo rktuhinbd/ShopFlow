@@ -53,3 +53,4 @@
 | TASK-302 | Create DAOs | 2026-08-27 | DAO compilation and build passed |
 | TASK-303 | Create database class | 2026-08-27 | Created ShopFlowDatabase with all entities, DAOs, and Converters. |
 | TASK-304 | Create Hilt database module | 2026-08-27 | DatabaseModule created and verified by build. |
+| TASK-305 | Write DAO tests | 2026-08-27 | 20/20 tests passed on connected device (Pixel_10_Pro). |
