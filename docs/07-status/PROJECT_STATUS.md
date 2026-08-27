@@ -7,42 +7,44 @@
 | Field | Value |
 |-------|-------|
 | **Project** | ShopFlow |
-| **Current Phase** | PLANNING (M0 — Agentic Development Foundation) |
-| **Overall Progress** | M0 documentation complete; awaiting human approval |
-| **Current Milestone** | M0 — Agentic Development Foundation |
-| **Current Task** | TASK-017 — Present plan for human approval |
-| **Plan Status** | REVIEW_READY |
-| **Last Completed** | TASK-016 — Cross-document consistency review |
-| **Currently Under Development** | Master plan presentation and approval |
-| **Next Task** | Human review and approval of master plan |
+| **Current Phase** | IMPLEMENTATION (M1 — Project Foundation) |
+| **Overall Progress** | M1 started; TASK-100 completed |
+| **Current Milestone** | M1 — Project Foundation |
+| **Current Task** | TASK-101 — Create Package Structure |
+| **Plan Status** | APPROVED |
+| **Last Completed** | TASK-100 — Add Dependencies |
+| **Currently Under Development** | Package structure |
+| **Next Task** | TASK-102 — Hilt Application Setup |
 | **Blockers** | None |
-| **Open Decisions** | FR-304 (search/category interaction), JSON serialization library, stale cache threshold |
-| **Latest Verification** | API contract verified against live endpoints (2026-08-27) |
+| **Open Decisions** | None (All ADRs 001-010 approved) |
+| **Latest Verification** | TASK-100 build verified (2026-08-27) |
 
 ## Plan State
 
 ```
-DRAFT → [REVIEW_READY] → HUMAN_REVIEW → APPROVED → IMPLEMENTATION
+DRAFT → REVIEW_READY → HUMAN_REVIEW → [APPROVED] → IMPLEMENTATION
 ```
 
-**Current**: **REVIEW_READY** — All planning documents created. Awaiting human review.
+**Current**: **APPROVED** — Implementation phase active.
+
+## Repository State
 
 ## Repository State
 
 - **Branch**: `master`
-- **Commits**: 1 (Initial commit) + planning docs (uncommitted)
-- **Build**: Android Studio template — builds with default Compose setup
-- **Implementation**: None beyond Android Studio template (MainActivity with "Hello Android")
-- **Tests**: Template tests only (ExampleUnitTest, ExampleInstrumentedTest)
+- **Commits**: Clean working tree after initial documentation sync and gitignore
+- **Build**: Passes successfully (`./gradlew assembleDebug` passed after TASK-100)
+- **Implementation**: None beyond Android Studio template. Dependencies configured.
+- **Tests**: Template tests only (ExampleUnitTest, ExampleInstrumentedTest). Tests not yet applicable for TASK-100.
 
 ## What Exists
 - Android Studio project with Compose, Material 3
 - AGP 9.3.2, Kotlin 2.2.10, Compose BOM 2026.02.01
 - Complete planning documentation system (docs/, tasks/, AGENTS.md, CLAUDE.md, .cursor/, .agents/)
+- Core dependencies added and configured in `libs.versions.toml` and Gradle scripts (Room, Hilt, Retrofit, Navigation, Paging, Coil, KSP, Serialization).
 
 ## What Does NOT Exist Yet
 - No production application code
-- No Hilt/Room/Retrofit/Paging dependencies
 - No package structure beyond template
 - No custom screens, ViewModels, repositories, data sources
 - No tests beyond template

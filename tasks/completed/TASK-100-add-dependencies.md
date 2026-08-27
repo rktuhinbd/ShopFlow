@@ -18,8 +18,25 @@ Add all required project dependencies to `gradle/libs.versions.toml`. This inclu
 - [ ] No version conflicts between dependencies
 - [ ] KSP plugin added for Room and Hilt annotation processing
 
-## Notes
+## Verification
 
-- Verify Hilt KSP support for current AGP/Kotlin versions (fallback to KAPT if needed, but KSP preferred).
-- JSON serialization decision is `kotlinx.serialization` (ADR-008).
-- Check Material 3 Adaptive library availability in Compose BOM.
+**Actual Files Changed**:
+- `gradle/libs.versions.toml`
+- `build.gradle.kts` (Project-level)
+- `app/build.gradle.kts` (App-level)
+
+**Actual Verification Commands**:
+- `git status`, `git diff`, `git diff --cached`
+- `$env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"; ./gradlew assembleDebug`
+
+**Actual Results**:
+- Git status verified clean (except for untracked workspace metadata file).
+- Build command passed successfully: `BUILD SUCCESSFUL in 2s`. 39 actionable tasks: 7 executed, 32 up-to-date.
+- Tests not yet applicable for TASK-100; no functional application code exists.
+- Architectural check confirms no application code, ViewModels, or classes were created.
+
+**Known Issues**:
+- The project environment on Windows requires `JAVA_HOME` explicitly set pointing to Android Studio's bundled JDK (`jbr`) to run `./gradlew` from the CLI.
+
+**Remaining Work**:
+- None for TASK-100. Ready for TASK-101.
