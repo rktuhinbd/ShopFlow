@@ -62,7 +62,7 @@
 | TASK-200 | Create API response DTOs | P0 | TASK-104 | Medium | PLANNED |
 | TASK-201 | Create Retrofit API service interface | P0 | TASK-200 | Medium | PLANNED |
 | TASK-202 | Create OkHttp client configuration | P0 | TASK-200 | Low | PLANNED |
-| TASK-203 | Create Hilt network module | P0 | TASK-201, TASK-202 | Low | PLANNED |
+| TASK-203 | Provide Retrofit and ProductApi through Hilt | P0 | TASK-201, TASK-202 | Low | PLANNED |
 | TASK-204 | Write API service tests | P1 | TASK-203 | Medium | PLANNED |
 
 ## M3 — Room / Local Data

@@ -6,17 +6,17 @@
 
 ## Immediate Next Action
 
-1. **TASK-202**: Create OkHttp client configuration (Priority: P0)
-   - Configure OkHttp with logging.
+1. **TASK-203**: Provide Retrofit and ProductApi through Hilt (Priority: P0)
+   - Provide Retrofit instance and ProductApi service via Hilt.
 
 Plan status: **APPROVED**
 
 ## Next 3 Actions
 
-1. **TASK-203**: Create Hilt network module (Priority: P0)
-   - Provide Retrofit and OkHttp dependencies via Hilt.
-2. **TASK-204**: Create Data sources and Repository implementation (Priority: P0)
-   - Create local and remote data sources.
+1. **TASK-204**: Write API service tests (Priority: P1)
+   - Add tests for Retrofit API interface.
+2. **TASK-300**: Create Room entities (Priority: P0)
+   - Add local DB entities for Products, etc.
 
 ## Future Actions
 

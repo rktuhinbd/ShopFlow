@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-202
-  title: Create OkHttp client configuration
+  id: TASK-203
+  title: Provide Retrofit and ProductApi through Hilt
   status: READY
 last_completed:
-  id: TASK-201
-  title: Create Retrofit API Service Interface
+  id: TASK-202
+  title: Create OkHttp client configuration
   status: DONE
 blocked: false
 implementation_allowed: true

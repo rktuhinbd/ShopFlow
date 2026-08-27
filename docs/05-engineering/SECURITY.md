@@ -21,30 +21,36 @@ ShopFlow is a read-only product catalog app with no authentication, no user acco
 - **Production**: No sensitive data in logs (NFR-501)
 - Use `Log.d`/`Log.i` only in debug builds
 - Strip logging in release via R8 or conditional compilation
-- OkHttp logging interceptor: debug only
+- OkHttp logging interceptor: debug only (BODY level), release (NONE)
+- **Redaction Policy**: Sensitive HTTP headers (Authorization, Cookie, Set-Cookie, X-API-Key, API-Key, Proxy-Authorization) are explicitly redacted from OkHttp logs to prevent accidental exposure of PII or credentials, even in DEBUG builds.
 
 ### 2.3 Permissions
 - **INTERNET** permission only (required for API calls)
 - No unnecessary permissions
 
-### 2.4 Network Security
+### 2.4 Authentication & Authorization
+- **Current State**: DummyJSON is a public API and requires no authentication.
+- **Extension Point**: An `AuthTokenProvider` abstraction exists to provide tokens if authentication is added later.
+- **Credential Storage**: No tokens, API keys, or credentials are hardcoded or stored persistently in this task, preserving absolute repository safety.
+
+### 2.5 Network Security
 - All API calls via HTTPS (NFR-502)
 - Network security config: enforce HTTPS
 - Certificate pinning: not required for DummyJSON (public mock API)
 - OkHttp timeouts configured to prevent hanging
 
-### 2.5 Dependency Security
+### 2.6 Dependency Security
 - Use only well-known, actively maintained libraries
 - Regularly check for dependency vulnerabilities
 - Pin dependency versions in Version Catalog
 
-### 2.6 Build Artifacts
+### 2.7 Build Artifacts
 - Debug and release build types separated (NFR-503)
 - Debug features stripped from release
 - ProGuard/R8 obfuscation in release
 - `debuggable = false` in release (default)
 
-### 2.7 Data Storage
+### 2.8 Data Storage
 - Room database: app-private storage (default)
 - No external storage usage
 - No data exported to other apps
