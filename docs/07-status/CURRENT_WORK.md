@@ -14,7 +14,7 @@
 Milestone 2 (Network Layer) is fully complete. The next step is starting Milestone 3 (Room / Local Data) by creating Room entities.
 
 ## Immediate Next Steps
-1. Create DAOs for database operations.
+1. Create the Room database instance and configuration.
 
 ## Completed Substeps
 - TASK-200: Create API response DTOs
@@ -24,12 +24,13 @@ Milestone 2 (Network Layer) is fully complete. The next step is starting Milesto
 - TASK-204: Write API service tests
 - TASK-300: Create Room entities
 - TASK-301: Create TypeConverters
+- TASK-302: Create DAOs
 
 ## Known Issues
 - None
 
 ## Next Action
-**TASK-302**: Create DAOs.
+**TASK-303**: Create database class.
 
 ## Verification
-TASK-301 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.
+TASK-302 verified by `./gradlew assembleDebug testDebugUnitTest` on 2026-08-27.

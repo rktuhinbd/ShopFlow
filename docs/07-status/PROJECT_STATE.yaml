@@ -10,12 +10,12 @@ current_task:
   title: null
   status: READY
 next_task:
-  id: TASK-302
-  title: Create DAOs
+  id: TASK-303
+  title: Create database class
   status: READY
 last_completed:
-  id: TASK-301
-  title: Create TypeConverters
+  id: TASK-302
+  title: Create DAOs
   status: DONE
 blocked: false
 implementation_allowed: true

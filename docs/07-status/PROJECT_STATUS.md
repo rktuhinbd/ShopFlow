@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M3 — Room / Local Data) |
 | **Overall Progress** | M2 completed; M3 starting |
 | **Current Milestone** | M3 — Room / Local Data |
-| **Current Task** | None (Ready for TASK-302) |
+| **Current Task** | None (Ready for TASK-303) |
 | **Plan Status** | APPROVED |
-| **Last Completed** | TASK-301 - Create TypeConverters |
+| **Last Completed** | TASK-302 - Create DAOs |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-302 - Create DAOs |
+| **Next Task** | TASK-303 - Create database class |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-010 approved) |
-| **Latest Verification** | TASK-301 assembleDebug and testDebugUnitTest passes (2026-08-27) |
+| **Latest Verification** | TASK-302 assembleDebug and testDebugUnitTest passes (2026-08-27) |
 
 ## Plan State
 
