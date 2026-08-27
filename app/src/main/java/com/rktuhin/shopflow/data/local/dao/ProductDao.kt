@@ -15,15 +15,15 @@ interface ProductDao {
     @Upsert
     suspend fun upsertAll(products: List<ProductEntity>)
 
-    @Query("SELECT * FROM products ORDER BY id ASC")
-    fun observeAllProducts(): PagingSource<Int, ProductEntity>
-
-    @Query("SELECT * FROM products WHERE category = :category ORDER BY id ASC")
-    fun observeProductsByCategory(category: String): PagingSource<Int, ProductEntity>
+    @Query("""
+        SELECT p.* FROM products p
+        INNER JOIN remote_keys r ON p.id = r.productId
+        WHERE r.query = :query
+        ORDER BY p.id ASC
+    """)
+    fun observeProductsByContext(query: String): PagingSource<Int, ProductEntity>
 
     @Query("SELECT * FROM products WHERE id = :id")
     fun observeProductById(id: Int): Flow<ProductEntity?>
 
-    @Query("DELETE FROM products")
-    suspend fun clearAll()
 }

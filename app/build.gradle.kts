@@ -26,6 +26,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        getByName("androidTest") {
+            assets.srcDirs(files("$projectDir/schemas"))
+        }
+    }
+
     buildTypes {
         release {
             optimization {
@@ -58,6 +64,7 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.room.paging)
     ksp(libs.room.compiler)
+    androidTestImplementation(libs.room.testing)
 
     // Hilt
     implementation(libs.hilt.android)

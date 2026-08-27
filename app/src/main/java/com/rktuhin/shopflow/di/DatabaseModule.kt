@@ -27,7 +27,9 @@ object DatabaseModule {
             context,
             ShopFlowDatabase::class.java,
             "shopflow.db"
-        ).build()
+        )
+        .addMigrations(ShopFlowDatabase.MIGRATION_1_2)
+        .build()
     }
 
     @Provides
@@ -48,5 +50,10 @@ object DatabaseModule {
     @Provides
     fun provideRemoteKeyDao(database: ShopFlowDatabase): RemoteKeyDao {
         return database.remoteKeyDao()
+    }
+
+    @Provides
+    fun provideCacheContextDao(database: ShopFlowDatabase): com.rktuhin.shopflow.data.local.dao.CacheContextDao {
+        return database.cacheContextDao()
     }
 }

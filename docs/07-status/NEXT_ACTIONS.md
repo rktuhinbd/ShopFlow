@@ -1,6 +1,6 @@
 # ShopFlow — Next Actions
 
-**Last Updated**: 2026-08-27T18:40:00+06:00
+**Last Updated**: 2026-08-27
 
 ---
 
@@ -9,7 +9,7 @@
 1. **TASK-400**: Create RemoteMediator (Priority: P0)
    - Implement RemoteMediator for paging data.
 
-Plan status: **APPROVED**
+Plan status: **PLANNED**
 
 ## Next 3 Actions
 
@@ -22,7 +22,6 @@ Plan status: **APPROVED**
 
 ## Future Actions
 
-- M3: Implement Room (entities, DAOs, database, TypeConverters)
 - M4: Implement Paging + RemoteMediator pipeline
 - M5: Implement repositories and domain models
 - M6: Implement MVVM / State Management

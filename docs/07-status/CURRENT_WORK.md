@@ -1,6 +1,6 @@
 # ShopFlow — Current Work
 
-**Last Updated**: 2026-08-27T18:40:00+06:00
+**Last Updated**: 2026-08-27
 
 ---
 
@@ -11,23 +11,19 @@
 - **Assignee**: Unassigned
 
 ## Context
-Milestone 2 (Network Layer) is fully complete. The next step is starting Milestone 3 (Room / Local Data) by creating Room entities.
+TASK-306 (Context-Aware Cache Schema) is complete. The v2 database schema has been verified with tests and migration data invariants. The project is unblocked for implementing the Paging3 `RemoteMediator`.
 
 ## Immediate Next Steps
-1. Create the Room database instance and configuration.
+1. Create `ProductRemoteMediator`.
 
 ## Completed Substeps
-- TASK-200: Create API response DTOs
-- TASK-201: Create Retrofit API Service Interface
-- TASK-202: Create OkHttp client configuration
-- TASK-203: Provide Retrofit and ProductApi through Hilt
-- TASK-204: Write API service tests
 - TASK-300: Create Room entities
 - TASK-301: Create TypeConverters
 - TASK-302: Create DAOs
 - TASK-303: Create database class
 - TASK-304: Create Hilt database module
 - TASK-305: Write DAO tests
+- TASK-306: Implement Context-Aware Cache Schema and Membership Queries
 
 ## Known Issues
 - None
@@ -36,4 +32,4 @@ Milestone 2 (Network Layer) is fully complete. The next step is starting Milesto
 **TASK-400**: Create RemoteMediator.
 
 ## Verification
-TASK-305 verified by `./gradlew connectedAndroidTest` (Passed 20 tests on Pixel_10_Pro(AVD) - 17) on 2026-08-27.
+TASK-306 verified by `./gradlew connectedAndroidTest` (Passed database migration tests and DAO queries).

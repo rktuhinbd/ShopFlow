@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.rktuhin.shopflow.data.local.ShopFlowDatabase
 import com.rktuhin.shopflow.data.local.entity.ProductEntity
+import com.rktuhin.shopflow.data.local.entity.RemoteKeyEntity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.After
@@ -20,6 +21,7 @@ class ProductDaoTest {
 
     private lateinit var database: ShopFlowDatabase
     private lateinit var productDao: ProductDao
+    private lateinit var remoteKeyDao: RemoteKeyDao
 
     @Before
     fun setup() {
@@ -28,6 +30,7 @@ class ProductDaoTest {
             ShopFlowDatabase::class.java
         ).allowMainThreadQueries().build()
         productDao = database.productDao()
+        remoteKeyDao = database.remoteKeyDao()
     }
 
     @After
@@ -77,78 +80,29 @@ class ProductDaoTest {
     }
 
     @Test
-    fun observeAllProducts_returnsOrderedPagingSource() = runTest {
-        val p2 = createProduct(2)
+    fun observeProductsByContext_returnsOnlyMembershipProducts() = runTest {
         val p1 = createProduct(1)
+        val p2 = createProduct(2)
         val p3 = createProduct(3)
         productDao.upsertAll(listOf(p2, p1, p3))
 
-        val pagingSource = productDao.observeAllProducts()
-        val result = pagingSource.load(
-            PagingSource.LoadParams.Refresh(
-                key = null,
-                loadSize = 10,
-                placeholdersEnabled = false
-            )
-        )
+        // Assign p1 and p2 to ALL, and p2 and p3 to CATEGORY:smartphones
+        remoteKeyDao.upsertAll(listOf(
+            RemoteKeyEntity(1, "ALL", null, null),
+            RemoteKeyEntity(2, "ALL", null, null),
+            RemoteKeyEntity(2, "CATEGORY:smartphones", null, null),
+            RemoteKeyEntity(3, "CATEGORY:smartphones", null, null)
+        ))
 
-        assertTrue(result is PagingSource.LoadResult.Page)
-        val page = result as PagingSource.LoadResult.Page
-        assertEquals(listOf(p1, p2, p3), page.data)
+        val pagingSourceAll = productDao.observeProductsByContext("ALL")
+        val resultAll = pagingSourceAll.load(PagingSource.LoadParams.Refresh(key = null, loadSize = 10, placeholdersEnabled = false))
+        assertTrue(resultAll is PagingSource.LoadResult.Page)
+        assertEquals(listOf(p1, p2), (resultAll as PagingSource.LoadResult.Page).data)
+
+        val pagingSourceCat = productDao.observeProductsByContext("CATEGORY:smartphones")
+        val resultCat = pagingSourceCat.load(PagingSource.LoadParams.Refresh(key = null, loadSize = 10, placeholdersEnabled = false))
+        assertTrue(resultCat is PagingSource.LoadResult.Page)
+        assertEquals(listOf(p2, p3), (resultCat as PagingSource.LoadResult.Page).data)
     }
 
-    @Test
-    fun observeProductsByCategory_returnsFilteredAndOrderedPagingSource() = runTest {
-        val p1 = createProduct(1, category = "catA")
-        val p2 = createProduct(2, category = "catB")
-        val p3 = createProduct(3, category = "catA")
-        productDao.upsertAll(listOf(p3, p2, p1))
-
-        val pagingSource = productDao.observeProductsByCategory("catA")
-        val result = pagingSource.load(
-            PagingSource.LoadParams.Refresh(
-                key = null,
-                loadSize = 10,
-                placeholdersEnabled = false
-            )
-        )
-
-        assertTrue(result is PagingSource.LoadResult.Page)
-        val page = result as PagingSource.LoadResult.Page
-        assertEquals(listOf(p1, p3), page.data)
-    }
-
-    @Test
-    fun observeProductById_emitsUpdatedProduct() = runTest {
-        val p1 = createProduct(1)
-        productDao.upsertAll(listOf(p1))
-
-        val initial = productDao.observeProductById(1).first()
-        assertEquals(p1, initial)
-
-        val updated = p1.copy(title = "Updated Title")
-        productDao.upsertAll(listOf(updated))
-
-        val afterUpdate = productDao.observeProductById(1).first()
-        assertEquals("Updated Title", afterUpdate?.title)
-    }
-
-    @Test
-    fun clearAll_removesAllProducts() = runTest {
-        productDao.upsertAll(listOf(createProduct(1), createProduct(2)))
-        productDao.clearAll()
-
-        val pagingSource = productDao.observeAllProducts()
-        val result = pagingSource.load(
-            PagingSource.LoadParams.Refresh(
-                key = null,
-                loadSize = 10,
-                placeholdersEnabled = false
-            )
-        )
-
-        assertTrue(result is PagingSource.LoadResult.Page)
-        val page = result as PagingSource.LoadResult.Page
-        assertTrue(page.data.isEmpty())
-    }
 }

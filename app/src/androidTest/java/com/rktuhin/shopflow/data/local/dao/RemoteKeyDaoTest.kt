@@ -35,7 +35,7 @@ class RemoteKeyDaoTest {
 
     @Test
     fun upsertAndGetRemoteKey_returnsCorrectKey() = runTest {
-        val key = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 2, createdAt = 1000L)
+        val key = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, nextKey = 20)
         remoteKeyDao.upsertAll(listOf(key))
 
         val retrieved = remoteKeyDao.getRemoteKey(1, "ALL")
@@ -44,55 +44,43 @@ class RemoteKeyDaoTest {
 
     @Test
     fun remoteKeys_areIsolatedByCacheContext() = runTest {
-        val keyAll = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 2, createdAt = 1000L)
-        val keyCat = RemoteKeyEntity(productId = 1, query = "CATEGORY:smartphones", prevKey = null, currentPage = 1, nextKey = 5, createdAt = 1000L)
+        val keyAll = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, nextKey = 20)
+        val keyCat = RemoteKeyEntity(productId = 1, query = "CATEGORY:smartphones", prevKey = null, nextKey = 50)
 
         remoteKeyDao.upsertAll(listOf(keyAll, keyCat))
 
         val retrievedAll = remoteKeyDao.getRemoteKey(1, "ALL")
         val retrievedCat = remoteKeyDao.getRemoteKey(1, "CATEGORY:smartphones")
 
-        assertEquals(2, retrievedAll?.nextKey)
-        assertEquals(5, retrievedCat?.nextKey)
+        assertEquals(20, retrievedAll?.nextKey)
+        assertEquals(50, retrievedCat?.nextKey)
     }
 
     @Test
     fun clearRemoteKeys_removesOnlyRequestedContext() = runTest {
-        val keyAll = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 2, createdAt = 1000L)
-        val keyCat = RemoteKeyEntity(productId = 1, query = "CATEGORY:smartphones", prevKey = null, currentPage = 1, nextKey = 5, createdAt = 1000L)
-        val keyCat2 = RemoteKeyEntity(productId = 1, query = "CATEGORY:laptops", prevKey = null, currentPage = 1, nextKey = 3, createdAt = 1000L)
+        val keyAll = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, nextKey = 20)
+        val keyCat = RemoteKeyEntity(productId = 1, query = "CATEGORY:smartphones", prevKey = null, nextKey = 50)
+        val keyCat2 = RemoteKeyEntity(productId = 1, query = "CATEGORY:laptops", prevKey = null, nextKey = 30)
 
         remoteKeyDao.upsertAll(listOf(keyAll, keyCat, keyCat2))
 
         remoteKeyDao.clearRemoteKeys("CATEGORY:smartphones")
 
         assertNull(remoteKeyDao.getRemoteKey(1, "CATEGORY:smartphones"))
-        assertEquals(2, remoteKeyDao.getRemoteKey(1, "ALL")?.nextKey)
-        assertEquals(3, remoteKeyDao.getRemoteKey(1, "CATEGORY:laptops")?.nextKey)
+        assertEquals(20, remoteKeyDao.getRemoteKey(1, "ALL")?.nextKey)
+        assertEquals(30, remoteKeyDao.getRemoteKey(1, "CATEGORY:laptops")?.nextKey)
     }
 
     @Test
     fun upsertAll_updatesExistingKey() = runTest {
-        val key = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 2, createdAt = 1000L)
+        val key = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, nextKey = 20)
         remoteKeyDao.upsertAll(listOf(key))
 
-        val updatedKey = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 3, createdAt = 2000L)
+        val updatedKey = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, nextKey = 30)
         remoteKeyDao.upsertAll(listOf(updatedKey))
 
         val retrieved = remoteKeyDao.getRemoteKey(1, "ALL")
-        assertEquals(3, retrieved?.nextKey)
-        assertEquals(2000L, retrieved?.createdAt)
+        assertEquals(30, retrieved?.nextKey)
     }
 
-    @Test
-    fun clearAll_removesAllKeys() = runTest {
-        val keyAll = RemoteKeyEntity(productId = 1, query = "ALL", prevKey = null, currentPage = 1, nextKey = 2, createdAt = 1000L)
-        val keyCat = RemoteKeyEntity(productId = 1, query = "CATEGORY:smartphones", prevKey = null, currentPage = 1, nextKey = 5, createdAt = 1000L)
-
-        remoteKeyDao.upsertAll(listOf(keyAll, keyCat))
-        remoteKeyDao.clearAll()
-
-        assertNull(remoteKeyDao.getRemoteKey(1, "ALL"))
-        assertNull(remoteKeyDao.getRemoteKey(1, "CATEGORY:smartphones"))
-    }
 }

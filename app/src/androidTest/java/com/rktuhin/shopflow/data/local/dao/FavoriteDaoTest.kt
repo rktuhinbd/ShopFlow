@@ -88,24 +88,4 @@ class FavoriteDaoTest {
         assertEquals(1, emitted?.productId)
     }
 
-    @Test
-    fun favorite_survivesProductDeletion() = runTest {
-        val product = ProductEntity(
-            id = 1, title = "Title", description = "Desc", category = "Cat", price = 10.0,
-            discountPercentage = 0.0, rating = 4.0, stock = 10, tags = emptyList(), brand = "Brand",
-            sku = "SKU", weight = 1, dimensionWidth = 1.0, dimensionHeight = 1.0, dimensionDepth = 1.0,
-            warrantyInformation = "1", shippingInformation = "1", availabilityStatus = "1",
-            reviews = emptyList(), returnPolicy = "1", minimumOrderQuantity = 1, images = emptyList(),
-            thumbnail = "thumb.jpg", cachedAt = System.currentTimeMillis()
-        )
-        productDao.upsertAll(listOf(product))
-
-        val fav = FavoriteEntity(productId = 1, favoritedAt = 1000L)
-        favoriteDao.upsertFavorite(fav)
-
-        productDao.clearAll() // Or delete product
-
-        val retrievedFav = favoriteDao.observeFavoriteByProductId(1).first()
-        assertEquals(1, retrievedFav?.productId)
-    }
 }

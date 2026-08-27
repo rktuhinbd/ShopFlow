@@ -1,8 +1,8 @@
 # ShopFlow — Roadmap
 
-**Version**: 1.0-DRAFT  
+**Version**: 1.0
 **Date**: 2026-08-27  
-**Status**: DRAFT — PENDING HUMAN APPROVAL
+**Status**: APPROVED
 
 ---
 
@@ -58,7 +58,7 @@ gantt
 **Dependencies**: M0 approved  
 **Exit Criteria**: Project builds with all dependencies; Hilt compiles.
 
-### M2 — Network Layer
+### M2 — Network Layer ✅ (Completed)
 - Create Retrofit API service interface
 - Create OkHttp client with logging interceptor
 - Create API response DTOs
@@ -68,18 +68,19 @@ gantt
 **Dependencies**: M1  
 **Exit Criteria**: API service interface defined; DTOs match verified API schema.
 
-### M3 — Room / Local Data
+### M3 — Room / Local Data ✅ (Completed)
 - Create Room entities (ProductEntity, FavoriteEntity, RemoteKeyEntity)
 - Create DAOs
 - Create TypeConverters
 - Create database class
 - Create Hilt database module
 - Write DAO unit tests
+- Implement Context-Aware Cache Schema
 
 **Dependencies**: M1  
 **Exit Criteria**: Database compiles; DAO tests pass with in-memory database.
 
-### M4 — Paging + RemoteMediator
+### M4 — Paging + RemoteMediator 🚧 (READY / NOT STARTED)
 - Create RemoteMediator implementation
 - Create PagingSource configuration
 - Create Pager setup
@@ -217,6 +218,4 @@ gantt
 **Dependencies**: M15  
 **Exit Criteria**: Project is complete and documented.
 
----
-
-**Document Status**: DRAFT — Awaiting human review and approval.
+**Document Status**: APPROVED — Implementation in progress.

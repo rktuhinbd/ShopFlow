@@ -1,20 +1,21 @@
 # ShopFlow — Data Model
 
-**Version**: 1.0-DRAFT  
-**Date**: 2026-08-27  
-**Status**: DRAFT — PENDING HUMAN APPROVAL
+**Version**: 2.0
+**Date**: 2026-08-27
+**Status**: APPROVED
 
 ---
 
 ## 1. Overview
 
-Room is the single source of truth for the UI (ADR-001). All data displayed to the user flows from Room, never directly from the network. The network layer writes into Room, and the UI observes Room through Paging 3's PagingSource and Kotlin Flows.
+Room is the single source of truth for the UI (ADR-001). All data displayed to the user flows from Room, never directly from the network.
+The schema supports context-aware offline caching (ADR-011) to isolate paging state and freshness for different contexts (`ALL` vs `CATEGORY:<slug>`).
 
 ## 2. Entities
 
 ### 2.1 ProductEntity
 
-The primary entity representing a cached product from the DummyJSON API.
+The primary entity representing a cached product from the DummyJSON API. It is the shared canonical record for products.
 
 | Column | Type | Constraints | Source |
 |--------|------|-------------|--------|
@@ -43,10 +44,27 @@ The primary entity representing a cached product from the DummyJSON API.
 | `thumbnail` | String | NOT NULL | API `thumbnail` |
 | `cachedAt` | Long | NOT NULL | System.currentTimeMillis() |
 
-**Indexes**:
-- `index_products_category` on `category` — for category filtering queries
+### 2.2 CacheContextEntity
 
-### 2.2 FavoriteEntity
+Tracks the freshness timestamp for each cached context independently.
+
+| Column | Type | Constraints | Source |
+|--------|------|-------------|--------|
+| `query` | String | PRIMARY KEY | Cache identity (e.g. "ALL", "CATEGORY:smartphones") |
+| `lastUpdated` | Long | NOT NULL | System.currentTimeMillis() |
+
+### 2.3 RemoteKeyEntity
+
+Tracks pagination state (`skip` offsets) AND context membership for RemoteMediator. Maps each product to its pagination position for REFRESH/APPEND behavior within a specific context.
+
+| Column | Type | Constraints | Source |
+|--------|------|-------------|--------|
+| `productId` | Int | PRIMARY KEY | References ProductEntity.id |
+| `query` | String | PRIMARY KEY | Cache identity (e.g. "ALL", "CATEGORY:smartphones") |
+| `prevKey` | Int? | NULLABLE | Previous skip offset (null for first page) |
+| `nextKey` | Int? | NULLABLE | Next skip offset (null for last page) |
+
+### 2.4 FavoriteEntity
 
 Tracks which products the user has favorited. Lightweight — stores only the product ID and timestamp.
 
@@ -55,20 +73,7 @@ Tracks which products the user has favorited. Lightweight — stores only the pr
 | `productId` | Int | PRIMARY KEY | References ProductEntity.id |
 | `favoritedAt` | Long | NOT NULL | System.currentTimeMillis() |
 
-### 2.3 RemoteKeyEntity
-
-Tracks pagination state for RemoteMediator. Maps each product to its pagination position for REFRESH/APPEND behavior.
-
-| Column | Type | Constraints | Source |
-|--------|------|-------------|--------|
-| `productId` | Int | PRIMARY KEY | References ProductEntity.id |
-| `query` | String | PRIMARY KEY | Cache identity (e.g. "", "cat_smartphones") |
-| `prevKey` | Int? | NULLABLE | Previous page number (null for first page) |
-| `currentPage` | Int | NOT NULL | Current page number |
-| `nextKey` | Int? | NULLABLE | Next page number (null for last page) |
-| `createdAt` | Long | NOT NULL | System.currentTimeMillis() |
-
-### 2.4 CategoryEntity (Optional Cache)
+### 2.5 CategoryEntity (Optional Cache)
 
 Caches category list for offline access. May be implemented as a simple cache rather than a Room entity.
 
@@ -92,14 +97,28 @@ Caches category list for offline access. May be implemented as a simple cache ra
 
 | Method | Query | Purpose |
 |--------|-------|---------|
-| `getProducts()` | `SELECT * FROM products ORDER BY id ASC` | PagingSource for Pager |
-| `getProductsByCategory(cat)` | `SELECT * FROM products WHERE category = :cat ORDER BY id ASC` | Category filter |
+| `observeProductsByContext(query)` | `SELECT p.* FROM products p INNER JOIN remote_keys k ON p.id = k.productId WHERE k.query = :query ORDER BY p.id ASC` | PagingSource for Pager |
 | `getProductById(id)` | `SELECT * FROM products WHERE id = :id` | Detail screen |
-| `insertAll(products)` | `@Insert(onConflict = REPLACE)` | RemoteMediator inserts |
-| `clearAll()` | `DELETE FROM products` | REFRESH clears cache |
-| `count()` | `SELECT COUNT(*) FROM products` | Check if cache exists |
+| `upsertAll(products)` | `@Upsert` | RemoteMediator inserts |
+| `clearAll()` | `DELETE FROM products` | Clears orphan products (future optimization) |
 
-### 4.2 FavoriteDao
+### 4.2 CacheContextDao
+
+| Method | Query | Purpose |
+|--------|-------|---------|
+| `getContext(query)` | `SELECT * FROM cache_context WHERE query = :query` | Freshness check |
+| `upsert(context)` | `@Upsert` | Update freshness |
+
+### 4.3 RemoteKeyDao
+
+| Method | Query | Purpose |
+|--------|-------|---------|
+| `getRemoteKey(id, query)` | `SELECT * FROM remote_keys WHERE productId = :id AND query = :query` | RemoteMediator lookup |
+| `upsertAll(keys)` | `@Upsert` | Store pagination state |
+| `clearRemoteKeys(query)` | `DELETE FROM remote_keys WHERE query = :query` | REFRESH clears keys for context |
+| `clearAll()` | `DELETE FROM remote_keys` | Complete reset |
+
+### 4.4 FavoriteDao
 
 | Method | Query | Purpose |
 |--------|-------|---------|
@@ -109,28 +128,21 @@ Caches category list for offline access. May be implemented as a simple cache ra
 | `delete(productId)` | `DELETE FROM favorites WHERE productId = :productId` | Remove favorite |
 | `getAllFavoriteIds()` | `SELECT productId FROM favorites` | Bulk favorite state check |
 
-### 4.3 RemoteKeyDao
-
-| Method | Query | Purpose |
-|--------|-------|---------|
-| `getRemoteKeyByProductId(id)` | `SELECT * FROM remote_keys WHERE productId = :id` | RemoteMediator lookup |
-| `insertAll(keys)` | `@Insert(onConflict = REPLACE)` | Store pagination state |
-| `clearAll()` | `DELETE FROM remote_keys` | REFRESH clears keys |
-| `getCreationTime()` | `SELECT createdAt FROM remote_keys ORDER BY createdAt DESC LIMIT 1` | Cache age check |
-
 ## 5. Database
 
 ```kotlin
 @Database(
-    entities = [ProductEntity::class, FavoriteEntity::class, RemoteKeyEntity::class],
-    version = 1,
+    entities = [ProductEntity::class, FavoriteEntity::class, CategoryEntity::class, RemoteKeyEntity::class, CacheContextEntity::class],
+    version = 2,
     exportSchema = true
 )
-@TypeConverters(Converters::class)
+@TypeConverters(StringListConverter::class, ProductReviewListConverter::class)
 abstract class ShopFlowDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao
     abstract fun favoriteDao(): FavoriteDao
+    abstract fun categoryDao(): CategoryDao
     abstract fun remoteKeyDao(): RemoteKeyDao
+    abstract fun cacheContextDao(): CacheContextDao
 }
 ```
 
@@ -138,22 +150,17 @@ abstract class ShopFlowDatabase : RoomDatabase() {
 
 | Scenario | Behavior |
 |----------|----------|
-| **First launch (online)** | RemoteMediator fetches page 0, inserts into Room, PagingSource emits |
-| **Cached launch (online)** | PagingSource emits cache immediately; RemoteMediator refreshes in background |
+| **First launch (online)** | RemoteMediator fetches page, upserts Products + RemoteKeys, updates CacheContext. |
+| **Cached launch (online)** | PagingSource emits cache immediately; RemoteMediator refreshes in background if CacheContext is stale. |
 | **Offline with cache** | PagingSource emits cache; RemoteMediator returns `MediatorResult.Error` |
 | **Offline without cache** | PagingSource emits empty; UI shows error/retry state |
-| **Refresh** | RemoteMediator clears products + remote keys in transaction, fetches fresh |
+| **Refresh** | RemoteMediator clears remote keys for that query, fetches fresh, upserts Products/Keys. |
 | **Network failure** | RemoteMediator returns error; existing cache remains; retry available |
-| **Stale data** | Check `cachedAt` or `RemoteKey.createdAt`; auto-refresh after threshold (TBD) |
 
 ## 7. Cache Invalidation Strategy
 
-- **On REFRESH**: Clear all products and remote keys in a single transaction, then refetch
-- **Stale threshold**: 15 minutes (ADR-009). Stale data is shown immediately, but triggers a background sync to refresh the cache.
+- **On REFRESH**: Clear `RemoteKeyEntity` rows for the specific context in a single transaction, then refetch.
+- **Stale threshold**: 15 minutes (ADR-009). Stale data is shown immediately, but triggers a background sync to refresh the cache via `CacheContextEntity.lastUpdated`.
 - **Network unavailable**: Cached data remains usable indefinitely. Stale cache is never deleted just because the network is unavailable.
-- **Favorites are NOT cleared on refresh** — they are independent of product cache
-- **Category cache**: Refreshed independently; staleness threshold same as products
-
----
-
-**Document Status**: DRAFT — Awaiting human review and approval.
+- **Favorites are NOT cleared on refresh** — they are independent of product cache.
+- **Category cache**: Refreshed independently; staleness threshold same as products.

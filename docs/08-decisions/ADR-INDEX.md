@@ -14,6 +14,7 @@
 | [ADR-008](ADR-008-kotlinx-serialization.md) | JSON Serialization (kotlinx.serialization) | ACCEPTED | 2026-08-27 |
 | [ADR-009](ADR-009-cache-freshness-policy.md) | Cache Freshness Policy | ACCEPTED | 2026-08-27 |
 | [ADR-010](ADR-010-search-paging-strategy.md) | Search Paging Strategy | ACCEPTED | 2026-08-27 |
+| [ADR-011](ADR-011-context-aware-cache-membership-and-freshness.md) | Context-Aware Cache Membership and Freshness | ACCEPTED | 2026-08-27 |
 
 ## ADR Template
 

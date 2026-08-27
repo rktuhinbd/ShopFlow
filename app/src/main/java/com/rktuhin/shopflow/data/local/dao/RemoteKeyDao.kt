@@ -16,7 +16,4 @@ interface RemoteKeyDao {
 
     @Query("DELETE FROM remote_keys WHERE query = :query")
     suspend fun clearRemoteKeys(query: String)
-
-    @Query("DELETE FROM remote_keys")
-    suspend fun clearAll()
 }
