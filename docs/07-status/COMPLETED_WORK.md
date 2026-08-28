@@ -81,3 +81,4 @@
 | Task | Title | Completed | Verification |
 |------|-------|-----------|-------------|
 | TASK-600 | Create UI state classes | 2026-08-28 | JVM/build verification |
+| TASK-601 | Create ProductListViewModel | 2026-08-28 | JVM/build verification |

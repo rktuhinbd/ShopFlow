@@ -5,8 +5,8 @@
 ---
 
 ## Current Task
-- **ID**: TASK-601
-- **Title**: Create ProductListViewModel
+- **ID**: TASK-602
+- **Title**: Create ProductDetailViewModel
 - **Status**: PLANNED
 - **Assignee**: AI Agent
 
@@ -14,7 +14,7 @@
 Implementation of the MVVM / State Management layer.
 
 ## Immediate Next Steps
-Create the ProductListViewModel and its related unit tests.
+Create the ProductDetailViewModel and its related unit tests.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -35,12 +35,13 @@ Create the ProductListViewModel and its related unit tests.
 - TASK-504: Create Hilt repository module
 - TASK-505: Write repository tests
 - TASK-600: Create UI state classes
+- TASK-601: Create ProductListViewModel
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-601.
+Start TASK-602.
 
 ## Verification
 TBD

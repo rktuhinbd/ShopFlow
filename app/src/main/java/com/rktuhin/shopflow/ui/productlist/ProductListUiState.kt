@@ -6,5 +6,6 @@ data class ProductListUiState(
     val categories: List<Category> = emptyList(),
     val selectedCategorySlug: String? = null,
     val searchQuery: String = "",
-    val favoriteProductIds: Set<Int> = emptySet()
+    val favoriteProductIds: Set<Int> = emptySet(),
+    val userMessage: String? = null
 )

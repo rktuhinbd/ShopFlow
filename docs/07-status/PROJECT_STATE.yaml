@@ -6,16 +6,16 @@ plan:
   status: APPROVED
 current_milestone: M6
 current_task:
-  id: TASK-601
-  title: Create ProductListViewModel
-  status: READY
-next_task:
   id: TASK-602
   title: Create ProductDetailViewModel
   status: READY
+next_task:
+  id: TASK-603
+  title: Create FavoritesViewModel
+  status: READY
 last_completed:
-  id: TASK-600
-  title: Create UI state classes
+  id: TASK-601
+  title: Create ProductListViewModel
   status: DONE
 blocked: false
 implementation_allowed: true

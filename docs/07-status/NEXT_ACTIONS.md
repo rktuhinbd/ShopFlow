@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-601**: Create ProductListViewModel (Priority: P0)
-   - Implement the ProductListViewModel with Paging and UI State.
+1. **TASK-602**: Create ProductDetailViewModel (Priority: P0)
+   - Implement the ProductDetailViewModel with UI State.
 
 Plan status: **READY**
 
 ## Next 3 Actions
 
-1. **TASK-602**: Create ProductDetailViewModel
-2. **TASK-603**: Create FavoritesViewModel
-3. **TASK-604**: Write ViewModel tests
+1. **TASK-603**: Create FavoritesViewModel
+2. **TASK-604**: Write ViewModel tests
+3. **TASK-700**: Create product card composable
 
 ## Future Actions
 
