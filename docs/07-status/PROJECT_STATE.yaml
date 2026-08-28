@@ -4,19 +4,19 @@ overall_progress: 2
 plan:
   version: "2.0"
   status: APPROVED
-current_milestone: M6
+current_milestone: M7
 current_task:
-  id: TASK-604
-  title: Write ViewModel tests
-  status: READY
-next_task:
   id: TASK-700
   title: Create product card composable
+  status: READY
+next_task:
+  id: TASK-701
+  title: Create product list screen
   status: PLANNED
 last_completed:
-  id: TASK-603
-  title: Create FavoritesViewModel
-  status: DONE
+  id: TASK-604
+  title: Write ViewModel tests
+  status: SUPERSEDED
 blocked: false
 implementation_allowed: true
 last_verified: 2026-08-28

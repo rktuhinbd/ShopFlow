@@ -105,13 +105,13 @@
 | TASK-601 | Create ProductListViewModel | P0 | TASK-600, TASK-504 | High | DONE |
 | TASK-602 | Create ProductDetailViewModel | P0 | TASK-600, TASK-504 | Medium | DONE |
 | TASK-603 | Create FavoritesViewModel | P0 | TASK-600, TASK-504 | Medium | DONE |
-| TASK-604 | Write ViewModel tests | P1 | TASK-601, TASK-602, TASK-603 | High | READY |
+| TASK-604 | Write ViewModel tests | P1 | TASK-601, TASK-602, TASK-603 | High | SUPERSEDED |
 
 ## M7 — Product List Screen
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-700 | Create product card composable | P0 | TASK-601 | Medium | PLANNED |
+| TASK-700 | Create product card composable | P0 | TASK-601 | Medium | READY |
 | TASK-701 | Create product list screen | P0 | TASK-700 | High | PLANNED |
 | TASK-702 | Implement loading/error/empty states | P0 | TASK-701 | Medium | PLANNED |
 | TASK-703 | Create bottom navigation shell | P0 | TASK-701 | Medium | PLANNED |

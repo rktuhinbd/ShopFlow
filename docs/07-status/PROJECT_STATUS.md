@@ -7,14 +7,14 @@
 | Field | Value |
 |-------|-------|
 | **Project** | ShopFlow |
-| **Current Phase** | IMPLEMENTATION (M6 — MVVM / State Management) |
-| **Overall Progress** | M5 completed; M6 ready to start |
-| **Current Milestone** | M6 — MVVM / State Management |
-| **Current Task** | TASK-604 Write ViewModel tests |
+| **Current Phase** | IMPLEMENTATION (M7 — Product List) |
+| **Overall Progress** | M6 completed; M7 ready to start |
+| **Current Milestone** | M7 — Product List |
+| **Current Task** | TASK-700 Create product card composable |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-603 Create FavoritesViewModel |
-| **Currently Under Development** | TASK-604 Write ViewModel tests |
-| **Next Task** | Verify M6 completion |
+| **Last Completed** | TASK-604 Write ViewModel tests (SUPERSEDED) |
+| **Currently Under Development** | TASK-700 Create product card composable |
+| **Next Task** | TASK-701 Create product list screen |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
 | **Latest Verification** | TASK-603 JVM/build verification passes (2026-08-28) |
@@ -41,7 +41,7 @@ DRAFT → REVIEW_READY → HUMAN_REVIEW → [APPROVED] → IMPLEMENTATION
 - Hilt dependency injection setup for Network and Database modules.
 - Paging3 `RemoteMediator` and `ProductMapper` are implemented and verified.
 - Domain models, Repository interfaces, and Implementations (ProductRepository, FavoriteRepository) are implemented and verified.
+- MVVM / State Management (ViewModels and UI States) with complete test coverage.
 
 ## What Does NOT Exist Yet
-- MVVM / State Management.
 - UI Screens.

@@ -83,4 +83,5 @@
 | TASK-600 | Create UI state classes | 2026-08-28 | JVM/build verification |
 | TASK-601 | Create ProductListViewModel | 2026-08-28 | JVM/build verification |
 | TASK-602 | Create ProductDetailViewModel | 2026-08-28 | JVM/build verification |
-- **TASK-603**: Create FavoritesViewModel (2026-08-28)
+| TASK-603 | Create FavoritesViewModel | 2026-08-28 | JVM/build verification |
+| TASK-604 | Write ViewModel tests | 2026-08-28 | SUPERSEDED (completed during 601-603) |

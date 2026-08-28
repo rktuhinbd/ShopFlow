@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-604
-- **Title**: Write ViewModel tests
-- **Status**: PLANNED
+- **ID**: TASK-700
+- **Title**: Create product card composable
+- **Status**: READY
 - **Assignee**: AI Agent
 
 ## Context
-Implementation of the MVVM / State Management layer tests.
+Start M7 (Product List) by creating the reusable product card composable.
 
 ## Immediate Next Steps
-Create remaining view model tests if needed, or finalize M6 testing.
+Implement the product card UI component based on UI specifications.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -38,12 +38,13 @@ Create remaining view model tests if needed, or finalize M6 testing.
 - TASK-601: Create ProductListViewModel
 - TASK-602: Create ProductDetailViewModel
 - TASK-603: Create FavoritesViewModel
+- TASK-604: Write ViewModel tests (SUPERSEDED by existing tests)
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-604.
+Start TASK-700.
 
 ## Verification
-TBD
+UI Preview and component testing for Product Card.

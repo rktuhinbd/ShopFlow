@@ -21,8 +21,8 @@ gantt
     M4 Paging + RemoteMediator :done, m4, after m3, 3d
     M5 Repository + Domain    :done, m5, after m4, 2d
     section UI Layer
-    M6 MVVM / State           :active, m6, after m5, 2d
-    M7 Product List           :m7, after m6, 3d
+    M6 MVVM / State           :done, m6, after m5, 2d
+    M7 Product List           :active, m7, after m6, 3d
     M8 Search / Categories    :m8, after m7, 2d
     M9 Product Detail         :m9, after m8, 2d
     M10 Favorites             :m10, after m9, 2d
@@ -102,7 +102,7 @@ gantt
 **Dependencies**: M4  
 **Exit Criteria**: Repository provides paginated products, search, categories, favorites.
 
-### M6 — MVVM / State Management (Current)
+### M6 — MVVM / State Management ✅ (Completed)
 - Create ViewModels
 - Define UI state classes
 - Define UI events
@@ -112,7 +112,7 @@ gantt
 **Dependencies**: M5  
 **Exit Criteria**: ViewModels expose observable state; tests verify state transitions.
 
-### M7 — Product List Screen
+### M7 — Product List Screen (Current)
 - Create product card composable
 - Create product list screen
 - Connect to ViewModel/PagingData
