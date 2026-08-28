@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-701
-- **Title**: Create product list screen
+- **ID**: TASK-702
+- **Title**: Implement product detail screen
 - **Status**: READY
 - **Assignee**: AI Agent
 
 ## Context
-Continue M7 (Product List) by creating the main product list screen composable.
+Continue M7 (Product List) by creating the product detail screen.
 
 ## Immediate Next Steps
-Implement the product list screen UI component.
+Implement the product detail screen UI component.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -40,12 +40,13 @@ Implement the product list screen UI component.
 - TASK-603: Create FavoritesViewModel
 - TASK-604: Write ViewModel tests (SUPERSEDED by existing tests)
 - TASK-700: Create product card composable
+- TASK-701: Create product list screen
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-701.
+Start TASK-702.
 
 ## Verification
-UI component testing for Product List.
+UI component testing for Product Detail.

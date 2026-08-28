@@ -91,3 +91,4 @@
 | Task | Title | Completed | Verification |
 |------|-------|-----------|-------------|
 | TASK-700 | Create product card composable | 2026-08-28 | JVM/build verification and Compose UI tests |
+| TASK-701 | Create product list screen | 2026-08-28 | JVM/build verification and Compose UI tests |

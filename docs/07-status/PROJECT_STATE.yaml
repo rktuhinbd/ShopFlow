@@ -6,16 +6,16 @@ plan:
   status: APPROVED
 current_milestone: M7
 current_task:
-  id: TASK-701
-  title: Create product list screen
+  id: TASK-702
+  title: Implement product detail screen
   status: READY
 next_task:
-  id: TASK-702
-  title: Implement loading/error/empty states
+  id: TASK-703
+  title: Create bottom navigation shell
   status: PLANNED
 last_completed:
-  id: TASK-700
-  title: Create product card composable
+  id: TASK-701
+  title: Create product list screen
   status: DONE
 blocked: false
 implementation_allowed: true

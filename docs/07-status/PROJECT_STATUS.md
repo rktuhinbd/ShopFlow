@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M7 — Product List) |
 | **Overall Progress** | M6 completed; M7 ready to start |
 | **Current Milestone** | M7 — Product List |
-| **Current Task** | TASK-701 Create product list screen |
+| **Current Task** | TASK-702 Implement product detail screen |
 | **Plan Status** | READY |
-| **Last Completed** | TASK-700 Create product card composable |
-| **Currently Under Development** | TASK-701 Create product list screen |
-| **Next Task** | TASK-702 Implement loading/error/empty states |
+| **Last Completed** | TASK-701 Create product list screen |
+| **Currently Under Development** | TASK-702 Implement product detail screen |
+| **Next Task** | TASK-703 Create bottom navigation shell |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-700 UI tests pass (2026-08-28) |
+| **Latest Verification** | TASK-701 UI tests pass (2026-08-28) |
 
 ## Plan State
 
@@ -42,6 +42,7 @@ DRAFT → REVIEW_READY → HUMAN_REVIEW → [APPROVED] → IMPLEMENTATION
 - Paging3 `RemoteMediator` and `ProductMapper` are implemented and verified.
 - Domain models, Repository interfaces, and Implementations (ProductRepository, FavoriteRepository) are implemented and verified.
 - MVVM / State Management (ViewModels and UI States) with complete test coverage.
+- Product List Screen and Product Card composables with UI tests.
 
 ## What Does NOT Exist Yet
-- UI Screens.
+- Remaining UI Screens (Detail, Favorites, Navigation Shell).
