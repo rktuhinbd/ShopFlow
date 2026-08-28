@@ -8,16 +8,16 @@
 |-------|-------|
 | **Project** | ShopFlow |
 | **Current Phase** | IMPLEMENTATION (M4 — Paging & RemoteMediator) |
-| **Overall Progress** | M3 completed; M4 in progress |
+| **Overall Progress** | M3 completed; M4 completed |
 | **Current Milestone** | M4 — Paging & RemoteMediator |
 | **Current Task** | NONE |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-401 - Implement remote key management |
+| **Last Completed** | TASK-403 - Write RemoteMediator tests |
 | **Currently Under Development** | NONE |
-| **Next Task** | TASK-403 Write RemoteMediator tests |
+| **Next Task** | TASK-500 Create domain models |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-401 connectedAndroidTest passes (2026-08-28) |
+| **Latest Verification** | TASK-403 connectedAndroidTest passes (2026-08-28) |
 
 ## Plan State
 

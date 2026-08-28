@@ -18,7 +18,7 @@ gantt
     section Data Layer
     M2 Network Layer          :m2, after m1, 2d
     M3 Room / Local Data      :m3, after m2, 2d
-    M4 Paging + RemoteMediator :m4, after m3, 3d
+    M4 Paging + RemoteMediator :done, m4, after m3, 3d
     M5 Repository + Domain    :m5, after m4, 2d
     section UI Layer
     M6 MVVM / State           :m6, after m5, 2d
@@ -80,7 +80,7 @@ gantt
 **Dependencies**: M1  
 **Exit Criteria**: Database compiles; DAO tests pass with in-memory database.
 
-### M4 — Paging + RemoteMediator 🚧 (IN PROGRESS)
+### M4 — Paging + RemoteMediator ✅ (Completed)
 - Create RemoteMediator implementation
 - Create PagingSource configuration
 - Create Pager setup

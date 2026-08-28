@@ -6,14 +6,15 @@
 
 ## Immediate Next Action
 
-1. **TASK-403**: Write RemoteMediator tests (Priority: P1)
-   - Write comprehensive unit tests for ProductRemoteMediator.
+1. **TASK-500**: Create domain models (Priority: P0)
+   - Create data domain models mapped from Room entities.
 
 Plan status: **APPROVED / PLANNED**
 
 ## Next 3 Actions
 
-1. **M5**: Implement repositories and domain models
+1. **TASK-501**: Create repository interfaces
+2. **TASK-502**: Create mapper functions
 
 ## Future Actions
 

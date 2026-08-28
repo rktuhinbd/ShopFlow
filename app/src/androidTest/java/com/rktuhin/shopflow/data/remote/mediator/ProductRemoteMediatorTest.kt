@@ -254,6 +254,168 @@ class ProductRemoteMediatorTest {
         assertNotNull(db.cacheContextDao().getContext(context))
     }
 
+    // --- ALL REFRESH TEST (MANDATORY) ---
+    @Test
+    fun refresh_allContext_success_insertsProductsAndKeys() = runBlocking {
+        val context = "ALL"
+        
+        mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody(
+            """{
+              "products": [{"id": 1, "title": "P1", "description": "", "category": "smartphones", "price": 0.0, "discountPercentage": 0.0, "rating": 0.0, "stock": 0, "tags": [], "brand": "", "sku": "", "weight": 0, "dimensions": {"width": 0.0, "height": 0.0, "depth": 0.0}, "warrantyInformation": "", "shippingInformation": "", "availabilityStatus": "", "reviews": [], "returnPolicy": "", "minimumOrderQuantity": 0, "meta": {"createdAt": "", "updatedAt": "", "barcode": "", "qrCode": ""}, "images": [], "thumbnail": ""}],
+              "total": 100, "skip": 0, "limit": 1
+            }"""
+        ))
+
+        val mediator = ProductRemoteMediator(context, api, db)
+        val state = PagingState<Int, ProductEntity>(listOf(), null, PagingConfig(1), 0)
+        
+        val result = mediator.load(LoadType.REFRESH, state)
+        assertTrue(result is RemoteMediator.MediatorResult.Success)
+        assertFalse((result as RemoteMediator.MediatorResult.Success).endOfPaginationReached)
+
+        val request = mockWebServer.takeRequest()
+        assertEquals("GET", request.method)
+        assertTrue(request.path!!.contains("/products"))
+        assertTrue(request.path!!.contains("skip=0"))
+        assertTrue(request.path!!.contains("limit=1"))
+
+        // Assert database persistence
+        assertNotNull(db.productDao().observeProductById(1).first())
+        val key = db.remoteKeyDao().getRemoteKey(1, context)
+        assertNotNull(key)
+        assertNull(key!!.prevKey)
+        assertEquals(1, key.nextKey) // skip(0) + size(1)
+        
+        val cacheContext = db.cacheContextDao().getContext(context)
+        assertNotNull(cacheContext)
+        assertTrue(cacheContext!!.lastUpdated > 0L)
+    }
+
+    // --- APPEND SUCCESS NON-FINAL TEST ---
+    @Test
+    fun append_success_setsNextKeyForNonFinalPage() = runBlocking {
+        val context = "ALL"
+        // Seed initial state
+        db.productDao().upsertAll(listOf(createMockEntity(1)))
+        db.remoteKeyDao().upsertAll(listOf(
+            RemoteKeyEntity(1, context, null, 20)
+        ))
+
+        mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody(
+            """{
+              "products": [{"id": 2, "title": "P2", "description": "", "category": "smartphones", "price": 0.0, "discountPercentage": 0.0, "rating": 0.0, "stock": 0, "tags": [], "brand": "", "sku": "", "weight": 0, "dimensions": {"width": 0.0, "height": 0.0, "depth": 0.0}, "warrantyInformation": "", "shippingInformation": "", "availabilityStatus": "", "reviews": [], "returnPolicy": "", "minimumOrderQuantity": 0, "meta": {"createdAt": "", "updatedAt": "", "barcode": "", "qrCode": ""}, "images": [], "thumbnail": ""}],
+              "total": 100, "skip": 20, "limit": 20
+            }"""
+        ))
+
+        val mediator = ProductRemoteMediator(context, api, db)
+        val page = androidx.paging.PagingSource.LoadResult.Page<Int, ProductEntity>(
+            data = listOf(createMockEntity(1)),
+            prevKey = null,
+            nextKey = null
+        )
+        val state = PagingState(listOf(page), null, PagingConfig(20), 0)
+
+        val result = mediator.load(LoadType.APPEND, state)
+        assertTrue(result is RemoteMediator.MediatorResult.Success)
+        assertFalse((result as RemoteMediator.MediatorResult.Success).endOfPaginationReached)
+
+        val request = mockWebServer.takeRequest()
+        assertEquals("GET", request.method)
+        assertTrue(request.path!!.contains("skip=20"))
+
+        assertNotNull(db.productDao().observeProductById(2).first())
+        val key = db.remoteKeyDao().getRemoteKey(2, context)
+        assertNotNull(key)
+        assertEquals(21, key!!.nextKey) // skip(20) + size(1)
+    }
+
+    // --- APPEND SUCCESS FINAL PAGE TEST ---
+    @Test
+    fun append_success_returnsEndOfPaginationForFinalPage() = runBlocking {
+        val context = "ALL"
+        db.productDao().upsertAll(listOf(createMockEntity(1)))
+        db.remoteKeyDao().upsertAll(listOf(
+            RemoteKeyEntity(1, context, null, 80)
+        ))
+
+        // Return a response where skip + size >= total
+        mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody(
+            """{
+              "products": [{"id": 2, "title": "P2", "description": "", "category": "smartphones", "price": 0.0, "discountPercentage": 0.0, "rating": 0.0, "stock": 0, "tags": [], "brand": "", "sku": "", "weight": 0, "dimensions": {"width": 0.0, "height": 0.0, "depth": 0.0}, "warrantyInformation": "", "shippingInformation": "", "availabilityStatus": "", "reviews": [], "returnPolicy": "", "minimumOrderQuantity": 0, "meta": {"createdAt": "", "updatedAt": "", "barcode": "", "qrCode": ""}, "images": [], "thumbnail": ""}],
+              "total": 81, "skip": 80, "limit": 20
+            }"""
+        ))
+
+        val mediator = ProductRemoteMediator(context, api, db)
+        val page = androidx.paging.PagingSource.LoadResult.Page<Int, ProductEntity>(
+            data = listOf(createMockEntity(1)),
+            prevKey = null,
+            nextKey = null
+        )
+        val state = PagingState(listOf(page), null, PagingConfig(20), 0)
+
+        val result = mediator.load(LoadType.APPEND, state)
+        assertTrue(result is RemoteMediator.MediatorResult.Success)
+        assertTrue((result as RemoteMediator.MediatorResult.Success).endOfPaginationReached)
+
+        assertNotNull(db.productDao().observeProductById(2).first())
+        val key = db.remoteKeyDao().getRemoteKey(2, context)
+        assertNotNull(key)
+        assertNull(key!!.nextKey) // End of pagination
+    }
+
+    // --- IOEXCEPTION TEST ---
+    @Test
+    fun load_networkFailure_returnsErrorResult_fromIOException() = runBlocking {
+        val context = "ALL"
+        db.productDao().upsertAll(listOf(createMockEntity(1)))
+        db.remoteKeyDao().upsertAll(listOf(RemoteKeyEntity(1, context, null, 20)))
+        val oldTime = 1000L
+        db.cacheContextDao().upsert(CacheContextEntity(context, oldTime))
+
+        // Simulate network failure
+        val response = MockResponse().setSocketPolicy(okhttp3.mockwebserver.SocketPolicy.DISCONNECT_AT_START)
+        mockWebServer.enqueue(response)
+
+        val mediator = ProductRemoteMediator(context, api, db)
+        val state = PagingState<Int, ProductEntity>(listOf(), null, PagingConfig(20), 0)
+        
+        val result = mediator.load(LoadType.REFRESH, state)
+        assertTrue(result is RemoteMediator.MediatorResult.Error)
+        assertTrue((result as RemoteMediator.MediatorResult.Error).throwable is java.io.IOException)
+
+        // Verify cache preservation
+        assertNotNull(db.productDao().observeProductById(1).first())
+        assertNotNull(db.remoteKeyDao().getRemoteKey(1, context))
+        assertEquals(oldTime, db.cacheContextDao().getContext(context)?.lastUpdated)
+    }
+
+    // --- SERIALIZATION EXCEPTION TEST ---
+    @Test
+    fun load_malformedJson_returnsErrorResult_fromSerializationException() = runBlocking {
+        val context = "ALL"
+        db.productDao().upsertAll(listOf(createMockEntity(1)))
+        db.remoteKeyDao().upsertAll(listOf(RemoteKeyEntity(1, context, null, 20)))
+        val oldTime = 1000L
+        db.cacheContextDao().upsert(CacheContextEntity(context, oldTime))
+
+        // Return malformed JSON
+        mockWebServer.enqueue(MockResponse().setResponseCode(200).setBody("{ \"invalid\": JSON }"))
+
+        val mediator = ProductRemoteMediator(context, api, db)
+        val state = PagingState<Int, ProductEntity>(listOf(), null, PagingConfig(20), 0)
+        
+        val result = mediator.load(LoadType.REFRESH, state)
+        assertTrue(result is RemoteMediator.MediatorResult.Error)
+        assertTrue((result as RemoteMediator.MediatorResult.Error).throwable is kotlinx.serialization.SerializationException)
+
+        // Verify cache preservation
+        assertNotNull(db.productDao().observeProductById(1).first())
+        assertNotNull(db.remoteKeyDao().getRemoteKey(1, context))
+        assertEquals(oldTime, db.cacheContextDao().getContext(context)?.lastUpdated)
+    }
+
     private fun createMockEntity(id: Int, title: String = "Test") = ProductEntity(
         id = id, title = title, description = "", category = "", price = 0.0,
         discountPercentage = 0.0, rating = 0.0, stock = 0, tags = emptyList(),

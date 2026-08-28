@@ -10,12 +10,12 @@ current_task:
   title: NONE
   status: NONE
 next_task:
-  id: TASK-403
-  title: Write RemoteMediator tests
+  id: TASK-500
+  title: Create domain models
   status: PLANNED
 last_completed:
-  id: TASK-401
-  title: Implement remote key management
+  id: TASK-403
+  title: Write RemoteMediator tests
   status: DONE
 blocked: false
 implementation_allowed: true

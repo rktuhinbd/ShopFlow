@@ -11,10 +11,10 @@
 - **Assignee**: NONE
 
 ## Context
-TASK-401 (Implement remote key management) and TASK-402 (Configure Pager) are complete and verified. The repository is currently between tasks.
+TASK-403 (Write RemoteMediator tests) is complete and verified. Milestone M4 is formally done. The repository is currently between tasks.
 
 ## Immediate Next Steps
-Check NEXT_ACTIONS.md for the next task (TASK-403).
+Check NEXT_ACTIONS.md for the next task (TASK-500).
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -27,12 +27,13 @@ Check NEXT_ACTIONS.md for the next task (TASK-403).
 - TASK-400: Create RemoteMediator
 - TASK-401: Implement remote key management
 - TASK-402: Configure Pager
+- TASK-403: Write RemoteMediator tests
 
 ## Known Issues
 - None
 
 ## Next Action
-Check NEXT_ACTIONS.md for the next task.
+Check NEXT_ACTIONS.md for the next task (TASK-500).
 
 ## Verification
-TASK-401 and TASK-402 verified by `./gradlew connectedAndroidTest`.
+TASK-403 verified by `./gradlew connectedAndroidTest`.
