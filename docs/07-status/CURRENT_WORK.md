@@ -11,10 +11,10 @@
 - **Assignee**: NONE
 
 ## Context
-TASK-403 (Write RemoteMediator tests) is complete and verified. Milestone M4 is formally done. The repository is currently between tasks.
+TASK-500 (Create domain models) is complete and verified via JVM tests. The repository is currently between tasks within M5.
 
 ## Immediate Next Steps
-Check NEXT_ACTIONS.md for the next task (TASK-500).
+Check NEXT_ACTIONS.md for the next task (TASK-501).
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -28,6 +28,7 @@ Check NEXT_ACTIONS.md for the next task (TASK-500).
 - TASK-401: Implement remote key management
 - TASK-402: Configure Pager
 - TASK-403: Write RemoteMediator tests
+- TASK-500: Create domain models
 
 ## Known Issues
 - None

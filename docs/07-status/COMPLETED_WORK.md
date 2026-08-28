@@ -64,3 +64,9 @@
 | TASK-401 | Implement remote key management | 2026-08-28 | verified via existing tests |
 | TASK-402 | Configure Pager | 2026-08-28 | connectedAndroidTest passed |
 | TASK-403 | Write RemoteMediator tests | 2026-08-28 | connectedAndroidTest passed |
+
+## M5 — Repository + Domain
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-500 | Create domain models | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |

@@ -6,15 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-500**: Create domain models (Priority: P0)
-   - Create data domain models mapped from Room entities.
+1. **TASK-501**: Create repository interfaces (Priority: P0)
+   - Define contracts for domain layer.
 
 Plan status: **APPROVED / PLANNED**
 
 ## Next 3 Actions
 
-1. **TASK-501**: Create repository interfaces
-2. **TASK-502**: Create mapper functions
+1. **TASK-502**: Create mapper functions
+2. **TASK-503**: Create repository implementations
+3. **TASK-504**: Create Hilt repository module
 
 ## Future Actions
 

@@ -19,7 +19,7 @@ gantt
     M2 Network Layer          :m2, after m1, 2d
     M3 Room / Local Data      :m3, after m2, 2d
     M4 Paging + RemoteMediator :done, m4, after m3, 3d
-    M5 Repository + Domain    :m5, after m4, 2d
+    M5 Repository + Domain    :active, m5, after m4, 2d
     section UI Layer
     M6 MVVM / State           :m6, after m5, 2d
     M7 Product List           :m7, after m6, 3d

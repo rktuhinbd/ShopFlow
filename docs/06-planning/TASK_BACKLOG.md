@@ -90,7 +90,7 @@
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-500 | Create domain models | P0 | TASK-104 | Low | PLANNED |
+| TASK-500 | Create domain models | P0 | TASK-104 | Low | DONE |
 | TASK-501 | Create repository interfaces | P0 | TASK-500 | Low | PLANNED |
 | TASK-502 | Create mapper functions | P0 | TASK-500, TASK-200, TASK-300 | Medium | PLANNED |
 | TASK-503 | Create repository implementations | P0 | TASK-501, TASK-402 | High | PLANNED |

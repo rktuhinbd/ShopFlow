@@ -7,17 +7,17 @@
 | Field | Value |
 |-------|-------|
 | **Project** | ShopFlow |
-| **Current Phase** | IMPLEMENTATION (M4 — Paging & RemoteMediator) |
-| **Overall Progress** | M3 completed; M4 completed |
-| **Current Milestone** | M4 — Paging & RemoteMediator |
+| **Current Phase** | IMPLEMENTATION (M5 — Repository & Domain) |
+| **Overall Progress** | M4 completed; M5 in progress |
+| **Current Milestone** | M5 — Repository & Domain |
 | **Current Task** | NONE |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-403 - Write RemoteMediator tests |
+| **Last Completed** | TASK-500 - Create domain models |
 | **Currently Under Development** | NONE |
-| **Next Task** | TASK-500 Create domain models |
+| **Next Task** | TASK-501 Create repository interfaces |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-403 connectedAndroidTest passes (2026-08-28) |
+| **Latest Verification** | TASK-500 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 

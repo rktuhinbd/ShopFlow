@@ -4,18 +4,18 @@ overall_progress: 2
 plan:
   version: "2.0"
   status: APPROVED
-current_milestone: M4
+current_milestone: M5
 current_task:
   id: NONE
   title: NONE
   status: NONE
 next_task:
-  id: TASK-500
-  title: Create domain models
+  id: TASK-501
+  title: Create repository interfaces
   status: PLANNED
 last_completed:
-  id: TASK-403
-  title: Write RemoteMediator tests
+  id: TASK-500
+  title: Create domain models
   status: DONE
 blocked: false
 implementation_allowed: true
