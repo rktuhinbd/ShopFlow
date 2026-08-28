@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: None
-- **Title**: None
-- **Status**: READY
-- **Assignee**: Unassigned
+- **ID**: TASK-402
+- **Title**: Configure Pager
+- **Status**: IN_PROGRESS
+- **Assignee**: AI Agent
 
 ## Context
-TASK-400 (Create RemoteMediator) is complete. The RemoteMediator correctly handles Paging 3 events, offline-first synchronization, caching timeouts, and context isolation (`ALL` vs `CATEGORY`).
+TASK-400 (Create RemoteMediator) is complete. We are now working on TASK-402 to configure the Paging 3 Pager using an unscoped factory inside the Data Layer, which will wire the PagingSource and ProductRemoteMediator together for the ALL and CATEGORY contexts.
 
 ## Immediate Next Steps
-1. Proceed with the next planned task (TASK-401 or TASK-402).
+1. Create ProductPagerFactory and ProductPagerFactoryTest.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
