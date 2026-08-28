@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-501**: Create repository interfaces (Priority: P0)
-   - Define contracts for domain layer.
+1. **TASK-502**: Create mapper functions (Priority: P0)
+   - Map DTOs -> Entities -> Domain Models.
 
-Plan status: **APPROVED / PLANNED**
+Plan status: **PLANNED**
 
 ## Next 3 Actions
 
-1. **TASK-502**: Create mapper functions
-2. **TASK-503**: Create repository implementations
-3. **TASK-504**: Create Hilt repository module
+1. **TASK-503**: Create repository implementations
+2. **TASK-504**: Create Hilt repository module
+3. **TASK-505**: Write repository tests
 
 ## Future Actions
 

@@ -70,3 +70,4 @@
 | Task | Title | Completed | Verification |
 |------|-------|-----------|-------------|
 | TASK-500 | Create domain models | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
+| TASK-501 | Create repository interfaces | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |

@@ -10,12 +10,12 @@ current_task:
   title: NONE
   status: NONE
 next_task:
-  id: TASK-501
-  title: Create repository interfaces
+  id: TASK-502
+  title: Create mapper functions
   status: PLANNED
 last_completed:
-  id: TASK-500
-  title: Create domain models
+  id: TASK-501
+  title: Create repository interfaces
   status: DONE
 blocked: false
 implementation_allowed: true

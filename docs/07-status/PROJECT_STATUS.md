@@ -12,12 +12,12 @@
 | **Current Milestone** | M5 — Repository & Domain |
 | **Current Task** | NONE |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-500 - Create domain models |
+| **Last Completed** | TASK-501 - Create repository interfaces |
 | **Currently Under Development** | NONE |
-| **Next Task** | TASK-501 Create repository interfaces |
+| **Next Task** | TASK-502 Create mapper functions |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-500 JVM/build verification passes (2026-08-28) |
+| **Latest Verification** | TASK-501 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 
