@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-603
-- **Title**: Create FavoritesViewModel
+- **ID**: TASK-604
+- **Title**: Write ViewModel tests
 - **Status**: PLANNED
 - **Assignee**: AI Agent
 
 ## Context
-Implementation of the MVVM / State Management layer.
+Implementation of the MVVM / State Management layer tests.
 
 ## Immediate Next Steps
-Create the FavoritesViewModel and its related unit tests.
+Create remaining view model tests if needed, or finalize M6 testing.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -37,12 +37,13 @@ Create the FavoritesViewModel and its related unit tests.
 - TASK-600: Create UI state classes
 - TASK-601: Create ProductListViewModel
 - TASK-602: Create ProductDetailViewModel
+- TASK-603: Create FavoritesViewModel
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-603.
+Start TASK-604.
 
 ## Verification
 TBD

@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-603**: Create FavoritesViewModel (Priority: P0)
-   - Implement the FavoritesViewModel with UI State.
+1. **TASK-604**: Write ViewModel tests (Priority: P1)
+   - Write tests for the ViewModels created in M6.
 
 Plan status: **READY**
 
 ## Next 3 Actions
 
-1. **TASK-604**: Write ViewModel tests
-2. **TASK-700**: Create product card composable
-3. **TASK-701**: Create product list screen
+1. **TASK-700**: Create product card composable
+2. **TASK-701**: Create product list screen
+3. **TASK-702**: Implement loading/error/empty states
 
 ## Future Actions
 

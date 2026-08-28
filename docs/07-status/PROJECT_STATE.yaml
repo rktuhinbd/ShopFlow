@@ -6,16 +6,16 @@ plan:
   status: APPROVED
 current_milestone: M6
 current_task:
-  id: TASK-603
-  title: Create FavoritesViewModel
-  status: READY
-next_task:
   id: TASK-604
   title: Write ViewModel tests
+  status: READY
+next_task:
+  id: TASK-700
+  title: Create product card composable
   status: PLANNED
 last_completed:
-  id: TASK-602
-  title: Create ProductDetailViewModel
+  id: TASK-603
+  title: Create FavoritesViewModel
   status: DONE
 blocked: false
 implementation_allowed: true
