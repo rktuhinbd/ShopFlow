@@ -10,6 +10,11 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.io.IOException
+import retrofit2.HttpException
+import retrofit2.Response
+import okhttp3.ResponseBody.Companion.toResponseBody
+import kotlinx.serialization.SerializationException
 
 class SearchPagingSourceTest {
 
@@ -124,31 +129,55 @@ class SearchPagingSourceTest {
     }
 
     @Test
-    fun `load network error returns Error`() = runTest {
-        val fakeApi = FakeSearchApi(shouldThrow = true)
+    fun `load network IOException returns Error`() = runTest {
+        val fakeApi = FakeSearchApi(exceptionToThrow = IOException("No internet"))
         val source = SearchPagingSource(fakeApi, "phone")
 
         val result = source.load(
-            PagingSource.LoadParams.Refresh(
-                key = null,
-                loadSize = 20,
-                placeholdersEnabled = false
-            )
+            PagingSource.LoadParams.Refresh(key = null, loadSize = 20, placeholdersEnabled = false)
         )
 
         assertTrue(result is PagingSource.LoadResult.Error)
+        assertTrue((result as PagingSource.LoadResult.Error).throwable is IOException)
+    }
+
+    @Test
+    fun `load HttpException returns Error`() = runTest {
+        val httpException = HttpException(Response.error<Any>(404, "".toResponseBody(null)))
+        val fakeApi = FakeSearchApi(exceptionToThrow = httpException)
+        val source = SearchPagingSource(fakeApi, "phone")
+
+        val result = source.load(
+            PagingSource.LoadParams.Refresh(key = null, loadSize = 20, placeholdersEnabled = false)
+        )
+
+        assertTrue(result is PagingSource.LoadResult.Error)
+        assertTrue((result as PagingSource.LoadResult.Error).throwable is HttpException)
+    }
+
+    @Test
+    fun `load SerializationException returns Error`() = runTest {
+        val fakeApi = FakeSearchApi(exceptionToThrow = SerializationException("Malformed JSON"))
+        val source = SearchPagingSource(fakeApi, "phone")
+
+        val result = source.load(
+            PagingSource.LoadParams.Refresh(key = null, loadSize = 20, placeholdersEnabled = false)
+        )
+
+        assertTrue(result is PagingSource.LoadResult.Error)
+        assertTrue((result as PagingSource.LoadResult.Error).throwable is SerializationException)
     }
 }
 
 class FakeSearchApi(
     private val totalToReturn: Int = 100,
-    private val shouldThrow: Boolean = false
+    private val exceptionToThrow: Exception? = null
 ) : ProductApi {
     var lastSkip = -1
     var lastLimit = -1
 
     override suspend fun searchProducts(query: String, limit: Int, skip: Int): ProductResponseDto {
-        if (shouldThrow) throw Exception("Network Error")
+        exceptionToThrow?.let { throw it }
         lastSkip = skip
         lastLimit = limit
 

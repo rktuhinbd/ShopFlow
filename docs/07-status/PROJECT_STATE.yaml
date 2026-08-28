@@ -4,18 +4,18 @@ overall_progress: 2
 plan:
   version: "2.0"
   status: APPROVED
-current_milestone: M5
+current_milestone: M6
 current_task:
-  id: TASK-505
-  title: Write repository tests
-  status: PLANNED
-next_task:
   id: TASK-600
   title: Create UI state classes
   status: PLANNED
+next_task:
+  id: TASK-601
+  title: Create ProductListViewModel
+  status: PLANNED
 last_completed:
-  id: TASK-504
-  title: Create Hilt repository module
+  id: TASK-505
+  title: Write repository tests
   status: DONE
 blocked: false
 implementation_allowed: true

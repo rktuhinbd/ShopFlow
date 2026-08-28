@@ -94,6 +94,35 @@ class FavoriteRepositoryImplTest {
         repository.removeFavorite(1)
         assertFalse(fakeFavoriteDao.favorites.value.any { it.productId == 1 })
     }
+
+    @Test
+    fun `getFavoriteProducts handles orphan favorites gracefully`() = runTest {
+        val fakeProductDao = FakeProductDao()
+        val fakeFavoriteDao = FakeFavoriteDao(fakeProductDao)
+        val repository = FavoriteRepositoryImpl(fakeFavoriteDao, fakeProductDao, FakeProductApi())
+
+        fakeFavoriteDao.upsertFavorite(FavoriteEntity(999, 123L))
+
+        val favorites = repository.getFavoriteProducts().first()
+        assertEquals(0, favorites.size)
+    }
+
+    @Test
+    fun `removeFavorite does not delete product entity`() = runTest {
+        val fakeProductDao = FakeProductDao()
+        val fakeFavoriteDao = FakeFavoriteDao(fakeProductDao)
+        val repository = FavoriteRepositoryImpl(fakeFavoriteDao, fakeProductDao, FakeProductApi())
+
+        fakeProductDao.upsertAll(
+            listOf(createDummyProductEntity(1, "Local"))
+        )
+        fakeFavoriteDao.upsertFavorite(FavoriteEntity(1, 123L))
+        
+        repository.removeFavorite(1)
+        
+        assertFalse(fakeFavoriteDao.favorites.value.any { it.productId == 1 })
+        assertEquals("Local", fakeProductDao.products.value.find { it.id == 1 }?.title)
+    }
 }
 
 class FakeFavoriteDao(private val productDao: FakeProductDao? = null) : FavoriteDao {

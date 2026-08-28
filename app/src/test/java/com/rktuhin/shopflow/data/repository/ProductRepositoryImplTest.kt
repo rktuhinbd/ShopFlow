@@ -14,6 +14,7 @@ import com.rktuhin.shopflow.data.remote.api.ProductApi
 import com.rktuhin.shopflow.data.remote.dto.CategoryDto
 import com.rktuhin.shopflow.data.remote.dto.ProductDto
 import com.rktuhin.shopflow.data.remote.dto.ProductResponseDto
+import androidx.paging.testing.asSnapshot
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
@@ -88,6 +89,53 @@ class ProductRepositoryImplTest {
         assertEquals(1, cached.size)
         assertEquals("cat2", cached[0].slug)
     }
+
+    @Test
+    fun `getProducts uses ALL context and maps entities`() = runTest {
+        val fakeProductDao = FakeProductDaoRepo()
+        val repository = createRepository(productDao = fakeProductDao)
+
+        fakeProductDao.upsertAll(listOf(createDummyProductEntity(1, "Product 1")))
+
+        val snapshot = repository.getProducts().asSnapshot()
+        
+        assertEquals("ALL", fakeProductDao.observedContext)
+        assertEquals(1, snapshot.size)
+        assertEquals("Product 1", snapshot[0].title)
+    }
+
+    @Test
+    fun `getProductsByCategory uses CATEGORY context and maps entities`() = runTest {
+        val fakeProductDao = FakeProductDaoRepo()
+        val repository = createRepository(productDao = fakeProductDao)
+
+        fakeProductDao.upsertAll(listOf(createDummyProductEntity(2, "Category Product")))
+
+        val snapshot = repository.getProductsByCategory("smartphones").asSnapshot()
+
+        assertEquals("CATEGORY:smartphones", fakeProductDao.observedContext)
+        assertEquals(1, snapshot.size)
+        assertEquals("Category Product", snapshot[0].title)
+    }
+
+    @Test
+    fun `searchProducts delegates to API and maps`() = runTest {
+        val fakeApi = FakeProductApiRepo()
+        fakeApi.searchResponseToReturn = ProductResponseDto(
+            products = listOf(createDummyProductDto(3, "Search Result")),
+            total = 1,
+            skip = 0,
+            limit = 20
+        )
+        val repository = createRepository(api = fakeApi)
+
+        val snapshot = repository.searchProducts("search query").asSnapshot()
+
+        assertEquals(1, fakeApi.searchProductsCallCount)
+        assertEquals("search query", fakeApi.lastSearchQuery)
+        assertEquals(1, snapshot.size)
+        assertEquals("Search Result", snapshot[0].title)
+    }
 }
 
 class FakeProductDaoRepo : ProductDao {
@@ -101,7 +149,20 @@ class FakeProductDaoRepo : ProductDao {
         }
     }
 
-    override fun observeProductsByContext(query: String): androidx.paging.PagingSource<Int, ProductEntity> = throw NotImplementedError()
+    var observedContext: String? = null
+    override fun observeProductsByContext(query: String): androidx.paging.PagingSource<Int, ProductEntity> {
+        observedContext = query
+        return object : androidx.paging.PagingSource<Int, ProductEntity>() {
+            override fun getRefreshKey(state: androidx.paging.PagingState<Int, ProductEntity>): Int? = null
+            override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ProductEntity> {
+                return LoadResult.Page(
+                    data = products.value,
+                    prevKey = null,
+                    nextKey = null
+                )
+            }
+        }
+    }
 
     override fun observeProductById(id: Int): Flow<ProductEntity?> {
         return products.map { list -> list.find { it.id == id } }
@@ -133,19 +194,35 @@ class FakeRemoteKeyDao : RemoteKeyDao {
 }
 
 class FakeCacheContextDao : CacheContextDao {
-    override suspend fun getContext(query: String): CacheContextEntity? = null
+    override suspend fun getContext(query: String): CacheContextEntity? {
+        return CacheContextEntity(query, System.currentTimeMillis())
+    }
     override suspend fun upsert(context: CacheContextEntity) {}
 }
 
 class FakeProductApiRepo : ProductApi {
     var getProductCallCount = 0
     var getCategoriesCallCount = 0
+    var searchProductsCallCount = 0
+    var lastSearchQuery: String? = null
+    
     var productToReturn: ProductDto? = null
     var categoriesToReturn: List<CategoryDto> = emptyList()
+    var searchResponseToReturn: ProductResponseDto? = null
 
-    override suspend fun getProducts(limit: Int, skip: Int): ProductResponseDto = throw NotImplementedError()
-    override suspend fun getProductsByCategory(categorySlug: String, limit: Int, skip: Int): ProductResponseDto = throw NotImplementedError()
-    override suspend fun searchProducts(query: String, limit: Int, skip: Int): ProductResponseDto = throw NotImplementedError()
+    override suspend fun getProducts(limit: Int, skip: Int): ProductResponseDto {
+        return ProductResponseDto(emptyList(), 0, skip, limit)
+    }
+    
+    override suspend fun getProductsByCategory(categorySlug: String, limit: Int, skip: Int): ProductResponseDto {
+        return ProductResponseDto(emptyList(), 0, skip, limit)
+    }
+    
+    override suspend fun searchProducts(query: String, limit: Int, skip: Int): ProductResponseDto {
+        searchProductsCallCount++
+        lastSearchQuery = query
+        return searchResponseToReturn ?: ProductResponseDto(emptyList(), 0, 0, 20)
+    }
 
     override suspend fun getProduct(id: Int): ProductDto {
         getProductCallCount++

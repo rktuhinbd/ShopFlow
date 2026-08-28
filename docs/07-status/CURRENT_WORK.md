@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-505
-- **Title**: Write repository tests
+- **ID**: TASK-600
+- **Title**: Create UI state classes
 - **Status**: PLANNED
 - **Assignee**: AI Agent
 
 ## Context
-Implementing tests for the repository layer.
+Implementation of the MVVM / State Management layer.
 
 ## Immediate Next Steps
-Write tests for ProductRepositoryImpl and FavoriteRepositoryImpl.
+Create state classes for the UI.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -33,12 +33,13 @@ Write tests for ProductRepositoryImpl and FavoriteRepositoryImpl.
 - TASK-502: Create mapper functions
 - TASK-503: Implement repository layer
 - TASK-504: Create Hilt repository module
+- TASK-505: Write repository tests
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-505.
+Start TASK-600.
 
 ## Verification
 TBD

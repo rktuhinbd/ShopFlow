@@ -95,13 +95,13 @@
 | TASK-502 | Create mapper functions | P0 | TASK-500, TASK-200, TASK-300 | Medium | DONE |
 | TASK-503 | Create repository implementations | P0 | TASK-501, TASK-402 | High | DONE |
 | TASK-504 | Create Hilt repository module | P0 | TASK-503 | Low | DONE |
-| TASK-505 | Write repository tests | P1 | TASK-504 | Medium | PLANNED |
+| TASK-505 | Write repository tests | P1 | TASK-504 | Medium | DONE |
 
 ## M6 — MVVM / State
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-600 | Create UI state classes | P0 | TASK-500 | Low | PLANNED |
+| TASK-600 | Create UI state classes | P0 | TASK-500 | Low | READY |
 | TASK-601 | Create ProductListViewModel | P0 | TASK-600, TASK-504 | High | PLANNED |
 | TASK-602 | Create ProductDetailViewModel | P0 | TASK-600, TASK-504 | Medium | PLANNED |
 | TASK-603 | Create FavoritesViewModel | P0 | TASK-600, TASK-504 | Medium | PLANNED |

@@ -7,17 +7,17 @@
 | Field | Value |
 |-------|-------|
 | **Project** | ShopFlow |
-| **Current Phase** | IMPLEMENTATION (M5 — Repository & Domain) |
-| **Overall Progress** | M4 completed; M5 in progress |
-| **Current Milestone** | M5 — Repository & Domain |
-| **Current Task** | TASK-505 Write repository tests |
+| **Current Phase** | IMPLEMENTATION (M6 — MVVM / State Management) |
+| **Overall Progress** | M5 completed; M6 ready to start |
+| **Current Milestone** | M6 — MVVM / State Management |
+| **Current Task** | TASK-600 Create UI state classes |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-504 Create Hilt repository module |
-| **Currently Under Development** | TASK-505 Write repository tests |
-| **Next Task** | TASK-600 Create UI state classes |
+| **Last Completed** | TASK-505 Write repository tests |
+| **Currently Under Development** | TASK-600 Create UI state classes |
+| **Next Task** | TASK-601 Create ProductListViewModel |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-504 JVM/build verification passes (2026-08-28) |
+| **Latest Verification** | TASK-505 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 
@@ -39,11 +39,9 @@ DRAFT → REVIEW_READY → HUMAN_REVIEW → [APPROVED] → IMPLEMENTATION
 - Room database (v2 schema) with `ProductEntity`, `FavoriteEntity`, `RemoteKeyEntity`, `CacheContextEntity` and DAOs.
 - Network models and API interfaces.
 - Hilt dependency injection setup for Network and Database modules.
-
 - Paging3 `RemoteMediator` and `ProductMapper` are implemented and verified.
+- Domain models, Repository interfaces, and Implementations (ProductRepository, FavoriteRepository) are implemented and verified.
 
 ## What Does NOT Exist Yet
-- `Pager` configuration and integration.
-- Repositories and domain models.
 - MVVM / State Management.
 - UI Screens.

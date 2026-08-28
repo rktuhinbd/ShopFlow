@@ -19,9 +19,9 @@ gantt
     M2 Network Layer          :m2, after m1, 2d
     M3 Room / Local Data      :m3, after m2, 2d
     M4 Paging + RemoteMediator :done, m4, after m3, 3d
-    M5 Repository + Domain    :active, m5, after m4, 2d
+    M5 Repository + Domain    :done, m5, after m4, 2d
     section UI Layer
-    M6 MVVM / State           :m6, after m5, 2d
+    M6 MVVM / State           :active, m6, after m5, 2d
     M7 Product List           :m7, after m6, 3d
     M8 Search / Categories    :m8, after m7, 2d
     M9 Product Detail         :m9, after m8, 2d
@@ -91,7 +91,7 @@ gantt
 **Dependencies**: M2, M3  
 **Exit Criteria**: Paging pipeline fetches from API, inserts into Room, emits PagingData.
 
-### M5 — Repository + Domain
+### M5 — Repository + Domain ✅ (Completed)
 - Create domain models
 - Create repository interfaces
 - Create repository implementations
@@ -102,7 +102,7 @@ gantt
 **Dependencies**: M4  
 **Exit Criteria**: Repository provides paginated products, search, categories, favorites.
 
-### M6 — MVVM / State Management
+### M6 — MVVM / State Management (Current)
 - Create ViewModels
 - Define UI state classes
 - Define UI events
