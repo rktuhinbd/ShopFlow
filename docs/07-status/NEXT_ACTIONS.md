@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-700**: Create product card composable (Priority: P0)
-   - Implement the reusable UI component for product display.
+1. **TASK-701**: Create product list screen (Priority: P0)
+   - Implement the main screen for product display and pagination.
 
 Plan status: **READY**
 
 ## Next 3 Actions
 
-1. **TASK-701**: Create product list screen
-2. **TASK-702**: Implement loading/error/empty states
-3. **TASK-703**: Create bottom navigation shell
+1. **TASK-702**: Implement loading/error/empty states
+2. **TASK-703**: Create bottom navigation shell
+3. **TASK-704**: Implement pull-to-refresh
 
 ## Future Actions
 

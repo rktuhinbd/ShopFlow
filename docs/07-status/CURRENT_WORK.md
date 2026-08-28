@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-700
-- **Title**: Create product card composable
+- **ID**: TASK-701
+- **Title**: Create product list screen
 - **Status**: READY
 - **Assignee**: AI Agent
 
 ## Context
-Start M7 (Product List) by creating the reusable product card composable.
+Continue M7 (Product List) by creating the main product list screen composable.
 
 ## Immediate Next Steps
-Implement the product card UI component based on UI specifications.
+Implement the product list screen UI component.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -39,12 +39,13 @@ Implement the product card UI component based on UI specifications.
 - TASK-602: Create ProductDetailViewModel
 - TASK-603: Create FavoritesViewModel
 - TASK-604: Write ViewModel tests (SUPERSEDED by existing tests)
+- TASK-700: Create product card composable
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-700.
+Start TASK-701.
 
 ## Verification
-UI Preview and component testing for Product Card.
+UI component testing for Product List.

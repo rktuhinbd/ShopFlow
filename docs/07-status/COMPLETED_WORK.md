@@ -85,3 +85,9 @@
 | TASK-602 | Create ProductDetailViewModel | 2026-08-28 | JVM/build verification |
 | TASK-603 | Create FavoritesViewModel | 2026-08-28 | JVM/build verification |
 | TASK-604 | Write ViewModel tests | 2026-08-28 | SUPERSEDED (completed during 601-603) |
+
+## M7 — Product List Screen
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-700 | Create product card composable | 2026-08-28 | JVM/build verification and Compose UI tests |
