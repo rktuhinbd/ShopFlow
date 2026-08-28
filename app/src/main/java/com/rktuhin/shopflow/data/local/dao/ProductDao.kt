@@ -26,4 +26,7 @@ interface ProductDao {
     @Query("SELECT * FROM products WHERE id = :id")
     fun observeProductById(id: Int): Flow<ProductEntity?>
 
+    @Query("SELECT * FROM products WHERE id = :id")
+    suspend fun getProductByIdSync(id: Int): ProductEntity?
+
 }

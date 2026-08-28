@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: NONE
-- **Title**: NONE
-- **Status**: NONE
-- **Assignee**: NONE
+- **ID**: TASK-504
+- **Title**: Create Hilt repository module
+- **Status**: PLANNED
+- **Assignee**: AI Agent
 
 ## Context
-TASK-502 (Create mapper functions) is complete and verified via JVM tests. The repository is currently between tasks within M5.
+Implementing Hilt dependency injection for the repository layer.
 
 ## Immediate Next Steps
-Check NEXT_ACTIONS.md for the next task (TASK-503).
+Create Hilt module for repositories.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -31,12 +31,13 @@ Check NEXT_ACTIONS.md for the next task (TASK-503).
 - TASK-500: Create domain models
 - TASK-501: Create repository interfaces
 - TASK-502: Create mapper functions
+- TASK-503: Implement repository layer
 
 ## Known Issues
 - None
 
 ## Next Action
-Check NEXT_ACTIONS.md for the next task (TASK-503).
+Start TASK-504.
 
 ## Verification
-TASK-502 verified by `./gradlew testDebugUnitTest`.
+TBD

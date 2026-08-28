@@ -23,12 +23,7 @@ class ProductPagerFactory @Inject constructor(
             "Invalid paging context: $context. Must be ALL or start with CATEGORY: followed by a non-blank slug."
         }
 
-        val pagingConfig = PagingConfig(
-            pageSize = 20,
-            prefetchDistance = 5,
-            enablePlaceholders = false,
-            initialLoadSize = 20
-        )
+        val pagingConfig = ShopFlowPagingConfig.default
 
         return Pager(
             config = pagingConfig,

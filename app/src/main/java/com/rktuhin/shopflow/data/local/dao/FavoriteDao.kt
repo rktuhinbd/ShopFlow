@@ -20,4 +20,11 @@ interface FavoriteDao {
 
     @Query("SELECT * FROM favorites WHERE productId = :productId")
     fun observeFavoriteByProductId(productId: Int): Flow<FavoriteEntity?>
+
+    @Query("""
+        SELECT p.* FROM products p
+        INNER JOIN favorites f ON p.id = f.productId
+        ORDER BY f.favoritedAt DESC
+    """)
+    fun observeFavoriteProducts(): Flow<List<com.rktuhin.shopflow.data.local.entity.ProductEntity>>
 }

@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M5 — Repository & Domain) |
 | **Overall Progress** | M4 completed; M5 in progress |
 | **Current Milestone** | M5 — Repository & Domain |
-| **Current Task** | NONE |
+| **Current Task** | TASK-504 Create Hilt repository module |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-502 Create mapper functions |
-| **Currently Under Development** | NONE |
-| **Next Task** | TASK-503 Create repository implementations |
+| **Last Completed** | TASK-503 Implement repository layer |
+| **Currently Under Development** | TASK-504 Create Hilt repository module |
+| **Next Task** | TASK-505 Implement repository tests |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-502 JVM/build verification passes (2026-08-28) |
+| **Latest Verification** | TASK-503 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 

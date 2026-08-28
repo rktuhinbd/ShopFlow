@@ -71,3 +71,5 @@
 |------|-------|-----------|-------------|
 | TASK-500 | Create domain models | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
 | TASK-501 | Create repository interfaces | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
+| TASK-502 | Create mapper functions | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
+| TASK-503 | Implement repository layer | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |

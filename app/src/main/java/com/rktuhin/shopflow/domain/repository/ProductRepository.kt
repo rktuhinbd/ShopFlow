@@ -33,4 +33,14 @@ interface ProductRepository {
      * Observes the list of available categories.
      */
     fun getCategories(): Flow<List<Category>>
+
+    /**
+     * Explicit network fetch and cache persistence for a product.
+     */
+    suspend fun fetchProduct(id: Int)
+
+    /**
+     * Explicit network fetch and cache persistence for categories.
+     */
+    suspend fun fetchCategories()
 }
