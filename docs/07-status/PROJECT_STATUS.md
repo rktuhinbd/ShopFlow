@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M6 — MVVM / State Management) |
 | **Overall Progress** | M5 completed; M6 ready to start |
 | **Current Milestone** | M6 — MVVM / State Management |
-| **Current Task** | TASK-602 Create ProductDetailViewModel |
+| **Current Task** | TASK-603 Create FavoritesViewModel |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-601 Create ProductListViewModel |
-| **Currently Under Development** | TASK-602 Create ProductDetailViewModel |
-| **Next Task** | TASK-603 Create FavoritesViewModel |
+| **Last Completed** | TASK-602 Create ProductDetailViewModel |
+| **Currently Under Development** | TASK-603 Create FavoritesViewModel |
+| **Next Task** | TASK-604 Write ViewModel tests |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-601 JVM/build verification passes (2026-08-28) |
+| **Latest Verification** | TASK-602 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 

@@ -7,7 +7,8 @@ sealed interface ProductDetailUiState {
     
     data class Success(
         val product: Product,
-        val isFavorite: Boolean
+        val isFavorite: Boolean,
+        val userMessage: String? = null
     ) : ProductDetailUiState
     
     data class Error(val message: String) : ProductDetailUiState
