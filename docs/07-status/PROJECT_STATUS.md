@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M7 — Product List) |
 | **Overall Progress** | M6 completed; M7 ready to start |
 | **Current Milestone** | M7 — Product List |
-| **Current Task** | TASK-703 Create bottom navigation shell |
+| **Current Task** | TASK-704 Implement pull-to-refresh |
 | **Plan Status** | READY |
-| **Last Completed** | TASK-702 Implement product detail screen |
+| **Last Completed** | TASK-703 Create bottom navigation shell |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-703 Create bottom navigation shell |
+| **Next Task** | TASK-704 Implement pull-to-refresh |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-702 UI tests pass (2026-08-28) |
+| **Latest Verification** | TASK-703 build and tests pass (2026-08-28) |
 
 ## Plan State
 
@@ -45,4 +45,5 @@ DRAFT → REVIEW_READY → HUMAN_REVIEW → [APPROVED] → IMPLEMENTATION
 - Product List Screen and Product Card composables with UI tests.
 
 ## What Does NOT Exist Yet
-- Remaining UI Screens (Detail, Favorites, Navigation Shell).
+- Remaining UI Screens (Favorites).
+- Search and Categories UI.

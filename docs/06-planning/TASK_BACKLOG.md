@@ -114,7 +114,7 @@
 | TASK-700 | Create product card composable | P0 | TASK-601 | Medium | DONE |
 | TASK-701 | Create product list screen | P0 | TASK-700 | High | DONE |
 | TASK-702 | Implement product detail screen | P0 | TASK-701 | Medium | DONE |
-| TASK-703 | Create bottom navigation shell | P0 | TASK-701 | Medium | READY |
+| TASK-703 | Create bottom navigation shell | P0 | TASK-701 | Medium | DONE |
 | TASK-704 | Implement pull-to-refresh | P1 | TASK-701 | Low | PLANNED |
 
 ## M8 — Search / Categories

@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-703
-- **Title**: Create bottom navigation shell
+- **ID**: TASK-704
+- **Title**: Implement pull-to-refresh
 - **Status**: READY
 - **Assignee**: AI Agent
 
 ## Context
-Continue M7 (Product List) by creating the bottom navigation shell.
+Continue M7 (Product List) by implementing pull-to-refresh.
 
 ## Immediate Next Steps
-Implement the bottom navigation shell UI component.
+Verify if pull-to-refresh is already fully functional and mark task accordingly.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -43,11 +43,13 @@ Implement the bottom navigation shell UI component.
 - TASK-701: Create product list screen
 - TASK-702: Implement product detail screen
 
+- TASK-703: Create bottom navigation shell
+
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-703.
+Start TASK-704.
 
 ## Verification
-UI component testing for Navigation.
+Test pull-to-refresh behavior.

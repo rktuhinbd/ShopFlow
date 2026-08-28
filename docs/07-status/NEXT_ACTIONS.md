@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-703**: Create bottom navigation shell (Priority: P0)
-   - Implement bottom navigation shell component.
+1. **TASK-704**: Implement pull-to-refresh (Priority: P1)
+   - Verify existing PullToRefreshBox implementation.
 
 Plan status: **READY**
 
 ## Next 3 Actions
 
-1. **TASK-704**: Implement pull-to-refresh
-2. **TASK-800**: Create search bar UI
-3. **TASK-801**: Implement search debounce pipeline
+1. **TASK-800**: Create search bar UI
+2. **TASK-801**: Implement search debounce pipeline
+3. **TASK-802**: Implement category chips UI
 
 ## Future Actions
 

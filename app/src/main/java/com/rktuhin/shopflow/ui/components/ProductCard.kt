@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -60,29 +61,37 @@ fun ProductCard(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(1f)
+                        .aspectRatio(1.25f)
                 )
 
-                IconButton(
-                    onClick = onFavoriteClick,
+                Surface(
+                    shape = androidx.compose.foundation.shape.CircleShape,
+                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
                     modifier = Modifier
                         .align(Alignment.TopEnd)
-                        .padding(4.dp)
+                        .padding(8.dp)
+                        .size(32.dp)
                 ) {
-                    val icon = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder
-                    val tint = if (isFavorite) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurface
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
-                        tint = tint
-                    )
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier.fillMaxSize().clickable(onClick = onFavoriteClick),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        val icon = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder
+                        val tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
+                            tint = tint,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
                 }
             }
 
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(12.dp)
+                    .padding(horizontal = 12.dp, vertical = 10.dp)
             ) {
                 Text(
                     text = product.title,
@@ -101,7 +110,7 @@ fun ProductCard(
                     Text(
                         text = product.brand ?: "Unknown Brand",
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.secondary,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier.weight(1f)
@@ -133,21 +142,21 @@ fun ProductCard(
                         val discountedPrice = product.price * (1 - product.discountPercentage / 100)
                         Text(
                             text = "$${String.format("%.2f", discountedPrice)}",
-                            style = MaterialTheme.typography.titleSmall,
-                            color = MaterialTheme.colorScheme.primary
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.onSurface
                         )
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(6.dp))
                         Text(
                             text = "$${String.format("%.2f", product.price)}",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
                             textDecoration = TextDecoration.LineThrough
                         )
                     } else {
                         Text(
                             text = "$${String.format("%.2f", product.price)}",
-                            style = MaterialTheme.typography.titleSmall,
-                            color = MaterialTheme.colorScheme.primary
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
