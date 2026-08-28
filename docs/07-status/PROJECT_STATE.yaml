@@ -6,16 +6,16 @@ plan:
   status: APPROVED
 current_milestone: M7
 current_task:
-  id: TASK-702
-  title: Implement product detail screen
-  status: READY
-next_task:
   id: TASK-703
   title: Create bottom navigation shell
+  status: READY
+next_task:
+  id: TASK-704
+  title: Implement pull-to-refresh
   status: PLANNED
 last_completed:
-  id: TASK-701
-  title: Create product list screen
+  id: TASK-702
+  title: Implement product detail screen
   status: DONE
 blocked: false
 implementation_allowed: true
