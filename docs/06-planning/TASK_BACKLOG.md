@@ -101,10 +101,10 @@
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-600 | Create UI state classes | P0 | TASK-500 | Low | READY |
-| TASK-601 | Create ProductListViewModel | P0 | TASK-600, TASK-504 | High | PLANNED |
-| TASK-602 | Create ProductDetailViewModel | P0 | TASK-600, TASK-504 | Medium | PLANNED |
-| TASK-603 | Create FavoritesViewModel | P0 | TASK-600, TASK-504 | Medium | PLANNED |
+| TASK-600 | Create UI state classes | P0 | TASK-500 | Low | DONE |
+| TASK-601 | Create ProductListViewModel | P0 | TASK-600, TASK-504 | High | READY |
+| TASK-602 | Create ProductDetailViewModel | P0 | TASK-600, TASK-504 | Medium | READY |
+| TASK-603 | Create FavoritesViewModel | P0 | TASK-600, TASK-504 | Medium | READY |
 | TASK-604 | Write ViewModel tests | P1 | TASK-601, TASK-602, TASK-603 | High | PLANNED |
 
 ## M7 — Product List Screen

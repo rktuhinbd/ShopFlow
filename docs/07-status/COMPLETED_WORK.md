@@ -75,3 +75,9 @@
 | TASK-503 | Implement repository layer | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
 | TASK-504 | Create Hilt repository module | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
 | TASK-505 | Write repository tests | 2026-08-28 | 59/59 JVM unit tests passed |
+
+## M6 — MVVM / State Management
+
+| Task | Title | Completed | Verification |
+|------|-------|-----------|-------------|
+| TASK-600 | Create UI state classes | 2026-08-28 | JVM/build verification |
