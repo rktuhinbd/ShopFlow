@@ -81,9 +81,9 @@
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-400 | Create RemoteMediator | P0 | TASK-203, TASK-304 | High | PLANNED |
-| TASK-401 | Implement remote key management | P0 | TASK-400 | Medium | PLANNED |
-| TASK-402 | Configure Pager | P0 | TASK-400 | Medium | PLANNED |
+| TASK-400 | Create RemoteMediator | P0 | TASK-203, TASK-304 | High | DONE |
+| TASK-401 | Implement remote key management | P0 | TASK-400 | Medium | DONE |
+| TASK-402 | Configure Pager | P0 | TASK-400 | Medium | DONE |
 | TASK-403 | Write RemoteMediator tests | P1 | TASK-402 | High | PLANNED |
 
 ## M5 — Repository + Domain

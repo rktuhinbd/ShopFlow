@@ -1,6 +1,6 @@
 # ShopFlow — Project Status
 
-**Last Updated**: 2026-08-27
+**Last Updated**: 2026-08-28
 
 ---
 
@@ -8,16 +8,16 @@
 |-------|-------|
 | **Project** | ShopFlow |
 | **Current Phase** | IMPLEMENTATION (M4 — Paging & RemoteMediator) |
-| **Overall Progress** | M3 completed; M4 starting |
+| **Overall Progress** | M3 completed; M4 in progress |
 | **Current Milestone** | M4 — Paging & RemoteMediator |
-| **Current Task** | TASK-402 Configure Pager (IN_PROGRESS) |
+| **Current Task** | NONE |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-400 - Create RemoteMediator |
-| **Currently Under Development** | TASK-402 |
-| **Next Task** | TASK-401/403 |
+| **Last Completed** | TASK-401 - Implement remote key management |
+| **Currently Under Development** | NONE |
+| **Next Task** | TASK-403 Write RemoteMediator tests |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-400 connectedAndroidTest passes (2026-08-27) |
+| **Latest Verification** | TASK-401 connectedAndroidTest passes (2026-08-28) |
 
 ## Plan State
 

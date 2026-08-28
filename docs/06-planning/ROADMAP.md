@@ -80,7 +80,7 @@ gantt
 **Dependencies**: M1  
 **Exit Criteria**: Database compiles; DAO tests pass with in-memory database.
 
-### M4 — Paging + RemoteMediator 🚧 (READY / NOT STARTED)
+### M4 — Paging + RemoteMediator 🚧 (IN PROGRESS)
 - Create RemoteMediator implementation
 - Create PagingSource configuration
 - Create Pager setup

@@ -1,23 +1,22 @@
 # ShopFlow — Next Actions
 
-**Last Updated**: 2026-08-27
+**Last Updated**: 2026-08-28
 
 ---
 
 ## Immediate Next Action
 
-1. **TASK-402**: Configure Pager (Priority: P0)
-   - Setup the ProductPagerFactory to combine PagingConfig, PagingSource, and RemoteMediator.
+1. **TASK-403**: Write RemoteMediator tests (Priority: P1)
+   - Write comprehensive unit tests for ProductRemoteMediator.
 
-Plan status: **APPROVED / IMPLEMENTATION**
+Plan status: **APPROVED / PLANNED**
 
 ## Next 3 Actions
 
-1. **TASK-401/403**: Remote Keys and Mediator Tests (Priority: P0)
+1. **M5**: Implement repositories and domain models
 
 ## Future Actions
 
-- M4: Implement Paging + RemoteMediator pipeline
 - M5: Implement repositories and domain models
 - M6: Implement MVVM / State Management
 
