@@ -6,16 +6,16 @@
 
 ## Immediate Next Action
 
-1. **TASK-502**: Create mapper functions (Priority: P0)
-   - Map DTOs -> Entities -> Domain Models.
+1. **TASK-503**: Create repository implementations (Priority: P0)
+   - Implement repository layer logic orchestrating network, remote keys, and Room.
 
 Plan status: **PLANNED**
 
 ## Next 3 Actions
 
-1. **TASK-503**: Create repository implementations
-2. **TASK-504**: Create Hilt repository module
-3. **TASK-505**: Write repository tests
+1. **TASK-504**: Create Hilt repository module
+2. **TASK-505**: Write repository tests
+3. **TASK-600**: Create UI state classes
 
 ## Future Actions
 

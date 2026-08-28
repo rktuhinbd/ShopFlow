@@ -11,10 +11,10 @@
 - **Assignee**: NONE
 
 ## Context
-TASK-501 (Create repository interfaces) is complete and verified via JVM tests. The repository is currently between tasks within M5.
+TASK-502 (Create mapper functions) is complete and verified via JVM tests. The repository is currently between tasks within M5.
 
 ## Immediate Next Steps
-Check NEXT_ACTIONS.md for the next task (TASK-502).
+Check NEXT_ACTIONS.md for the next task (TASK-503).
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -30,12 +30,13 @@ Check NEXT_ACTIONS.md for the next task (TASK-502).
 - TASK-403: Write RemoteMediator tests
 - TASK-500: Create domain models
 - TASK-501: Create repository interfaces
+- TASK-502: Create mapper functions
 
 ## Known Issues
 - None
 
 ## Next Action
-Check NEXT_ACTIONS.md for the next task (TASK-502).
+Check NEXT_ACTIONS.md for the next task (TASK-503).
 
 ## Verification
-TASK-403 verified by `./gradlew connectedAndroidTest`.
+TASK-502 verified by `./gradlew testDebugUnitTest`.
