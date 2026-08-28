@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-504
-- **Title**: Create Hilt repository module
+- **ID**: TASK-505
+- **Title**: Write repository tests
 - **Status**: PLANNED
 - **Assignee**: AI Agent
 
 ## Context
-Implementing Hilt dependency injection for the repository layer.
+Implementing tests for the repository layer.
 
 ## Immediate Next Steps
-Create Hilt module for repositories.
+Write tests for ProductRepositoryImpl and FavoriteRepositoryImpl.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -32,12 +32,13 @@ Create Hilt module for repositories.
 - TASK-501: Create repository interfaces
 - TASK-502: Create mapper functions
 - TASK-503: Implement repository layer
+- TASK-504: Create Hilt repository module
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-504.
+Start TASK-505.
 
 ## Verification
 TBD

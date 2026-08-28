@@ -6,21 +6,21 @@
 
 ## Immediate Next Action
 
-1. **TASK-503**: Implement repository layer (Priority: P0)
-   - Implement repository layer logic orchestrating network, remote keys, and Room.
+1. **TASK-505**: Write repository tests (Priority: P1)
+   - Write unit tests for ProductRepositoryImpl and FavoriteRepositoryImpl.
 
-Plan status: **IN_PROGRESS**
+Plan status: **PLANNED**
 
 ## Next 3 Actions
 
-1. **TASK-504**: Create Hilt repository module
-2. **TASK-505**: Write repository tests
-3. **TASK-600**: Create UI state classes
+1. **TASK-600**: Create UI state classes
+2. **TASK-601**: Create ProductListViewModel
+3. **TASK-602**: Create ProductDetailViewModel
 
 ## Future Actions
 
-- M5: Implement repositories and domain models
 - M6: Implement MVVM / State Management
+- M7: Product List
 
 ## Blocked Actions
 

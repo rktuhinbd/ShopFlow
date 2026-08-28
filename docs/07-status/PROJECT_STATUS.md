@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M5 — Repository & Domain) |
 | **Overall Progress** | M4 completed; M5 in progress |
 | **Current Milestone** | M5 — Repository & Domain |
-| **Current Task** | TASK-504 Create Hilt repository module |
+| **Current Task** | TASK-505 Write repository tests |
 | **Plan Status** | IMPLEMENTATION |
-| **Last Completed** | TASK-503 Implement repository layer |
-| **Currently Under Development** | TASK-504 Create Hilt repository module |
-| **Next Task** | TASK-505 Implement repository tests |
+| **Last Completed** | TASK-504 Create Hilt repository module |
+| **Currently Under Development** | TASK-505 Write repository tests |
+| **Next Task** | TASK-600 Create UI state classes |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-503 JVM/build verification passes (2026-08-28) |
+| **Latest Verification** | TASK-504 JVM/build verification passes (2026-08-28) |
 
 ## Plan State
 

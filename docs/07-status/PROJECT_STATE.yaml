@@ -6,16 +6,16 @@ plan:
   status: APPROVED
 current_milestone: M5
 current_task:
-  id: TASK-504
-  title: Create Hilt repository module
+  id: TASK-505
+  title: Write repository tests
   status: PLANNED
 next_task:
   id: TASK-600
-  title: Create presentation base classes
+  title: Create UI state classes
   status: PLANNED
 last_completed:
-  id: TASK-503
-  title: Implement repository layer
+  id: TASK-504
+  title: Create Hilt repository module
   status: DONE
 blocked: false
 implementation_allowed: true

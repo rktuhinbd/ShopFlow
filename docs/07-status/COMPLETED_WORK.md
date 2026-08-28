@@ -73,3 +73,4 @@
 | TASK-501 | Create repository interfaces | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
 | TASK-502 | Create mapper functions | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
 | TASK-503 | Implement repository layer | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
+| TASK-504 | Create Hilt repository module | 2026-08-28 | JVM/build verification (assembleDebug, testDebugUnitTest) |
