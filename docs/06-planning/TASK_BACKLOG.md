@@ -115,13 +115,13 @@
 | TASK-701 | Create product list screen | P0 | TASK-700 | High | DONE |
 | TASK-702 | Implement product detail screen | P0 | TASK-701 | Medium | DONE |
 | TASK-703 | Create bottom navigation shell | P0 | TASK-701 | Medium | DONE |
-| TASK-704 | Implement pull-to-refresh | P1 | TASK-701 | Low | PLANNED |
+| TASK-704 | Implement pull-to-refresh | P1 | TASK-701 | Low | DONE |
 
 ## M8 — Search / Categories
 
 | ID | Title | Priority | Dependencies | Complexity | Status |
 |----|-------|----------|-------------|-----------|--------|
-| TASK-800 | Implement search bar UI | P0 | TASK-701 | Medium | PLANNED |
+| TASK-800 | Implement search bar UI | P0 | TASK-701 | Medium | READY |
 | TASK-801 | Implement search debounce pipeline | P0 | TASK-800, TASK-601 | High | PLANNED |
 | TASK-802 | Implement category chips UI | P0 | TASK-701 | Medium | PLANNED |
 | TASK-803 | Implement category filtering | P0 | TASK-802, TASK-601 | Medium | PLANNED |

@@ -10,14 +10,14 @@
 | **Current Phase** | IMPLEMENTATION (M7 — Product List) |
 | **Overall Progress** | M6 completed; M7 ready to start |
 | **Current Milestone** | M7 — Product List |
-| **Current Task** | TASK-704 Implement pull-to-refresh |
+| **Current Task** | TASK-800 Implement search bar UI |
 | **Plan Status** | READY |
-| **Last Completed** | TASK-703 Create bottom navigation shell |
+| **Last Completed** | TASK-704 Implement pull-to-refresh |
 | **Currently Under Development** | None |
-| **Next Task** | TASK-704 Implement pull-to-refresh |
+| **Next Task** | TASK-801 Implement search debounce pipeline |
 | **Blockers** | None |
 | **Open Decisions** | None (All ADRs 001-011 approved) |
-| **Latest Verification** | TASK-703 build and tests pass (2026-08-28) |
+| **Latest Verification** | TASK-704 build and tests pass (2026-08-31) |
 
 ## Plan State
 

@@ -5,16 +5,16 @@
 ---
 
 ## Current Task
-- **ID**: TASK-704
-- **Title**: Implement pull-to-refresh
+- **ID**: TASK-800
+- **Title**: Implement search bar UI
 - **Status**: READY
 - **Assignee**: AI Agent
 
 ## Context
-Continue M7 (Product List) by implementing pull-to-refresh.
+Start M8 (Search / Categories) by implementing the search bar UI.
 
 ## Immediate Next Steps
-Verify if pull-to-refresh is already fully functional and mark task accordingly.
+Implement search bar UI as specified in UI/UX documentation.
 
 ## Completed Substeps
 - TASK-300: Create Room entities
@@ -44,12 +44,13 @@ Verify if pull-to-refresh is already fully functional and mark task accordingly.
 - TASK-702: Implement product detail screen
 
 - TASK-703: Create bottom navigation shell
+- TASK-704: Implement pull-to-refresh
 
 ## Known Issues
 - None
 
 ## Next Action
-Start TASK-704.
+Start TASK-800.
 
 ## Verification
-Test pull-to-refresh behavior.
+Test search bar UI rendering.
