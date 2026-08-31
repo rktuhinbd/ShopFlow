@@ -58,7 +58,7 @@ fun ShopFlowNavHost(modifier: Modifier = Modifier) {
             if (isTopLevelDestination) {
                 NavigationBar(
                     containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surface,
-                    tonalElevation = 8.dp,
+                    tonalElevation = 0.dp,
                     modifier = Modifier.semantics { contentDescription = "Bottom Navigation" }
                 ) {
                     topLevelRoutes.forEach { topLevelRoute ->

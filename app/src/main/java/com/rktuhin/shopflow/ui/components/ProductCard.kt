@@ -39,6 +39,11 @@ import com.rktuhin.shopflow.domain.model.Product
 import com.rktuhin.shopflow.ui.theme.ShopFlowTheme
 import kotlin.math.roundToInt
 
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.minimumInteractiveComponentSize
+import androidx.compose.ui.text.font.FontWeight
+
 @Composable
 fun ProductCard(
     product: Product,
@@ -47,11 +52,13 @@ fun ProductCard(
     onFavoriteClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    ElevatedCard(
+    Card(
         modifier = modifier
             .fillMaxWidth()
             .clickable(onClick = onClick)
             .semantics(mergeDescendants = true) {},
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Column {
             Box {
@@ -61,29 +68,30 @@ fun ProductCard(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(1.25f)
+                        .aspectRatio(1f)
                 )
 
-                Surface(
-                    shape = androidx.compose.foundation.shape.CircleShape,
-                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
+                IconButton(
+                    onClick = onFavoriteClick,
                     modifier = Modifier
                         .align(Alignment.TopEnd)
-                        .padding(8.dp)
-                        .size(32.dp)
+                        .padding(4.dp)
                 ) {
-                    androidx.compose.foundation.layout.Box(
-                        modifier = Modifier.fillMaxSize().clickable(onClick = onFavoriteClick),
-                        contentAlignment = Alignment.Center
+                    Surface(
+                        shape = androidx.compose.foundation.shape.CircleShape,
+                        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
+                        modifier = Modifier.size(32.dp)
                     ) {
-                        val icon = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder
-                        val tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
-                        Icon(
-                            imageVector = icon,
-                            contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
-                            tint = tint,
-                            modifier = Modifier.size(18.dp)
-                        )
+                        Box(contentAlignment = Alignment.Center) {
+                            val icon = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder
+                            val tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                            Icon(
+                                imageVector = icon,
+                                contentDescription = if (isFavorite) "Remove from favorites" else "Add to favorites",
+                                tint = tint,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
                     }
                 }
             }
@@ -91,11 +99,11 @@ fun ProductCard(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 12.dp, vertical = 10.dp)
+                    .padding(horizontal = 8.dp, vertical = 12.dp)
             ) {
                 Text(
                     text = product.title,
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -109,8 +117,8 @@ fun ProductCard(
                 ) {
                     Text(
                         text = product.brand ?: "Unknown Brand",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier.weight(1f)
@@ -123,17 +131,18 @@ fun ProductCard(
                             imageVector = Icons.Filled.Star,
                             contentDescription = "Rating",
                             tint = Color(0xFFFFC107), // Amber
-                            modifier = Modifier.size(14.dp)
+                            modifier = Modifier.size(12.dp)
                         )
-                        Spacer(modifier = Modifier.width(2.dp))
+                        Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = product.rating.toString(),
-                            style = MaterialTheme.typography.labelSmall
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                 }
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(6.dp))
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically
@@ -148,7 +157,7 @@ fun ProductCard(
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(
                             text = "$${String.format("%.2f", product.price)}",
-                            style = MaterialTheme.typography.bodySmall,
+                            style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
                             textDecoration = TextDecoration.LineThrough
                         )
